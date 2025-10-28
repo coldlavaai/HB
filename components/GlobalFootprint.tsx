@@ -15,7 +15,7 @@ const Globe = dynamic(() => import('react-globe.gl'), {
 });
 
 export default function GlobalFootprint() {
-  const globeEl = useRef<any>();
+  const globeEl = useRef<any>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
