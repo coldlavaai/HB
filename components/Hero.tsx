@@ -73,7 +73,7 @@ export default function Hero() {
             Commodity Consultant — Earlam & Partners
           </p>
           <p className="font-inter text-base md:text-lg text-cream/60 max-w-3xl mx-auto italic">
-            "Engineering-trained commodity specialist with 8 years building global cotton trading infrastructure across Asia, Europe, and the Americas"
+            "Engineering-trained commodity specialist bringing 8 years of cotton trading expertise to agricultural commodities infrastructure - proven at building scalable trading operations from grain platforms into soft commodities"
           </p>
         </motion.div>
 

@@ -38,8 +38,11 @@ export default function BusinessVision() {
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-cream mb-4">
             Business Vision
           </h2>
-          <p className="font-inter text-lg text-cream/70 max-w-4xl mx-auto">
-            Building a Cotton Trading Desk leveraging corporate infrastructure and LCB's commercial network to create scalable, high-integrity physical cotton flows
+          <p className="font-inter text-lg text-cream/70 max-w-4xl mx-auto mb-3">
+            Building a Cotton Trading Desk leveraging existing grain trading infrastructure and LCB's commercial network to create scalable, high-integrity physical cotton flows
+          </p>
+          <p className="font-inter text-base text-gold/90 max-w-4xl mx-auto italic">
+            "Cotton trade flows mirror grain trading behaviours (hedging, freight, contract structures) - enabling seamless integration into established agricultural commodity operations"
           </p>
         </motion.div>
 
@@ -55,10 +58,10 @@ export default function BusinessVision() {
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { icon: '📈', text: 'Diversifies business → softs and fibres' },
-              { icon: '🏗️', text: 'Uses existing trade finance & logistics infrastructure' },
-              { icon: '🌐', text: 'Immediate origination & sales via LCB network' },
-              { icon: '♻️', text: 'Aligns with sustainability & traceability initiatives' },
+              { icon: '📈', text: 'Natural diversification from grain → softs and fibres' },
+              { icon: '🏗️', text: 'Leverages existing trade finance, shipping desks & logistics infrastructure' },
+              { icon: '🌐', text: 'Immediate market access via proven LCB origination & sales network' },
+              { icon: '♻️', text: 'Growing demand for traceability (FiberTrace/TextileGenesis) mirrors grain sector trends' },
             ].map((item, i) => (
               <motion.div
                 key={i}
