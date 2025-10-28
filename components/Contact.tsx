@@ -9,7 +9,13 @@ export default function Contact() {
       icon: '📧',
       label: 'Email',
       value: 'hwbconsultingltd@outlook.com',
-      href: 'mailto:hwbconsultingltd@outlook.com',
+      href: 'mailto:hwbconsultingltd@outlook.com?subject=Inquiry from Interactive CV',
+    },
+    {
+      icon: '📱',
+      label: 'Mobile',
+      value: '+44 7380 949 6591',
+      href: 'tel:+447380949659',
     },
     {
       icon: '💬',
@@ -43,7 +49,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {contactInfo.map((info, index) => (
             <motion.div
               key={info.label}
@@ -67,9 +73,9 @@ export default function Contact() {
                   <div className="text-cream font-mono text-sm relative z-10 group-hover:text-cream/100 transition-colors duration-300">{info.value}</div>
                 </a>
               ) : (
-                <div className="bg-navy rounded-2xl p-8 border-2 border-teal/50 text-center">
+                <div className="bg-navy rounded-2xl p-8 border-2 border-gold/50 text-center relative overflow-hidden">
                   <div className="text-5xl mb-4">{info.icon}</div>
-                  <div className="text-teal font-semibold mb-2">{info.label}</div>
+                  <div className="text-gold font-semibold mb-2">{info.label}</div>
                   <div className="text-cream font-mono text-sm">{info.value}</div>
                   {info.subvalue && (
                     <div className="text-cream/60 text-xs mt-2">{info.subvalue}</div>
@@ -80,13 +86,13 @@ export default function Contact() {
           ))}
         </div>
 
-        {/* CTA Buttons */}
+        {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex flex-col md:flex-row items-center justify-center gap-6"
+          className="flex items-center justify-center"
         >
           <a
             href="/pdf"
@@ -96,15 +102,6 @@ export default function Contact() {
             <div className="absolute inset-0 bg-gradient-to-r from-gold/10 via-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <span className="text-2xl relative z-10 group-hover:scale-110 transition-transform duration-300">📄</span>
             <span className="relative z-10">Download PDF Version</span>
-          </a>
-
-          <a
-            href="mailto:hwbconsultingltd@outlook.com?subject=Inquiry from Interactive CV"
-            className="px-8 py-4 bg-gold hover:bg-gold-dark text-navy font-semibold rounded-lg transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 hover:shadow-2xl hover:shadow-gold/50 flex items-center gap-3 group relative overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <span className="text-2xl relative z-10 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">✉️</span>
-            <span className="relative z-10">Send Email</span>
           </a>
         </motion.div>
 
