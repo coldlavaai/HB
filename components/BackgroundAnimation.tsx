@@ -17,7 +17,7 @@ export default function BackgroundAnimation() {
     initialX: Math.random() * 100,
     initialY: Math.random() * 100,
     size: Math.random() * 20 + 10,
-    opacity: Math.random() * 0.3 + 0.2,
+    opacity: Math.random() * 0.4 + 0.4, // Increased from 0.3 + 0.2 to 0.4 + 0.4
     duration: Math.random() * 30 + 20,
     delay: Math.random() * 5,
     parallaxSpeed: Math.random() * 100 + 50,
@@ -52,7 +52,7 @@ export default function BackgroundAnimation() {
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
       {/* Base cotton fiber texture */}
-      <div className="absolute inset-0 opacity-[0.03]">
+      <div className="absolute inset-0 opacity-[0.15]">
         <svg width="100%" height="100%">
           <defs>
             <pattern id="cotton-texture" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
@@ -170,7 +170,7 @@ export default function BackgroundAnimation() {
 
       {/* Price chart grid overlay */}
       <motion.div
-        className="absolute inset-0 opacity-[0.06]"
+        className="absolute inset-0 opacity-[0.2]"
         style={{
           backgroundImage: `
             linear-gradient(to right, #D4AF37 1px, transparent 1px),
@@ -190,7 +190,7 @@ export default function BackgroundAnimation() {
 
       {/* Candlestick patterns */}
       {mounted && (
-        <div className="absolute inset-0 opacity-[0.08]">
+        <div className="absolute inset-0 opacity-[0.25]">
           <svg width="100%" height="100%" className="mix-blend-overlay">
             {Array.from({ length: 20 }).map((_, i) => {
               const x = (i * 5) % 100;
@@ -252,7 +252,7 @@ export default function BackgroundAnimation() {
                 initial={{ pathLength: 0, opacity: 0 }}
                 animate={{
                   pathLength: [0, 1, 0],
-                  opacity: [0, 0.4, 0],
+                  opacity: [0, 0.7, 0],
                 }}
                 transition={{
                   duration: 8,
@@ -267,9 +267,9 @@ export default function BackgroundAnimation() {
       )}
 
       {/* Market data ticker */}
-      <div className="absolute bottom-0 left-0 right-0 h-8 bg-navy/20 backdrop-blur-sm border-t border-gold/10 overflow-hidden">
+      <div className="absolute bottom-0 left-0 right-0 h-8 bg-navy/40 backdrop-blur-sm border-t border-gold/30 overflow-hidden">
         <motion.div
-          className="flex items-center h-full font-mono text-xs text-gold/40 whitespace-nowrap"
+          className="flex items-center h-full font-mono text-xs text-gold/70 whitespace-nowrap"
           animate={{
             x: [0, -2000],
           }}
@@ -289,15 +289,15 @@ export default function BackgroundAnimation() {
 
       {/* Subtle glow effects that respond to scroll */}
       <motion.div
-        className="absolute top-1/4 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-3xl"
+        className="absolute top-1/4 left-1/4 w-96 h-96 bg-gold/20 rounded-full blur-3xl"
         style={{
-          opacity: useTransform(scrollYProgress, [0, 0.3, 0.6, 1], [0.3, 0, 0.3, 0]),
+          opacity: useTransform(scrollYProgress, [0, 0.3, 0.6, 1], [0.5, 0.2, 0.5, 0.2]),
         }}
       />
       <motion.div
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal/5 rounded-full blur-3xl"
+        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-teal/20 rounded-full blur-3xl"
         style={{
-          opacity: useTransform(scrollYProgress, [0, 0.3, 0.6, 1], [0, 0.3, 0, 0.3]),
+          opacity: useTransform(scrollYProgress, [0, 0.3, 0.6, 1], [0.2, 0.5, 0.2, 0.5]),
         }}
       />
     </div>
