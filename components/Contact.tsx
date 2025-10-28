@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Contact() {
   const contactInfo = [
@@ -118,11 +119,14 @@ export default function Contact() {
           <div className="text-navy/50 text-sm mb-6">Current Affiliations</div>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-white rounded-lg p-2 border border-navy/10">
-                <div className="w-full h-full relative">
-                  {/* LCB placeholder */}
-                  <div className="text-navy font-bold text-xs flex items-center justify-center h-full">LCB</div>
-                </div>
+              <div className="w-16 h-16 relative">
+                <Image
+                  src="/logos/lcb-logo.png"
+                  alt="Liverpool Cotton Brokers"
+                  fill
+                  style={{ objectFit: 'contain' }}
+                  unoptimized
+                />
               </div>
               <div className="text-left">
                 <div className="font-semibold text-navy">Liverpool Cotton Brokers</div>
@@ -133,11 +137,14 @@ export default function Contact() {
             <div className="hidden md:block w-px h-12 bg-navy/20" />
 
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-white rounded-lg p-2 border border-navy/10">
-                <div className="w-full h-full relative">
-                  {/* EAP placeholder */}
-                  <div className="text-navy font-bold text-xs flex items-center justify-center h-full">EAP</div>
-                </div>
+              <div className="w-16 h-16 relative">
+                <Image
+                  src="/logos/eap-logo.png"
+                  alt="Earlam & Partners"
+                  fill
+                  style={{ objectFit: 'contain' }}
+                  unoptimized
+                />
               </div>
               <div className="text-left">
                 <div className="font-semibold text-navy">Earlam & Partners</div>
