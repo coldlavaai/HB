@@ -131,8 +131,8 @@ export default function GlobalFootprint() {
                     arcDashAnimateTime={3000}
                     arcStroke={0.5}
                     arcsTransitionDuration={0}
-                    height={400}
-                    width={400}
+                    height={550}
+                    width={550}
                     enablePointerInteraction={false}
                   />
                 </div>
@@ -142,36 +142,36 @@ export default function GlobalFootprint() {
             {/* Country Lists */}
             <div className="space-y-3">
               <div className="bg-navy/50 backdrop-blur-sm rounded-xl p-4 border border-gold/30">
-                <h3 className="font-playfair text-lg font-bold text-gold mb-2.5 flex items-center gap-2">
+                <h3 className="font-playfair text-lg font-bold text-gold mb-3 flex items-center gap-2">
                   <span className="w-2.5 h-2.5 bg-gold rounded-full animate-pulse" />
                   Origin Markets
                 </h3>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="flex flex-wrap gap-2">
                   {origins.map((point) => (
                     <div
                       key={point.name}
-                      className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg hover:bg-gold/20 transition-all duration-300 cursor-default group hover:scale-105 hover:shadow-lg hover:shadow-gold/20"
+                      className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-gold/10 border border-gold/30 hover:bg-gold/20 hover:border-gold/50 transition-all duration-300 cursor-default group hover:scale-105 hover:shadow-lg hover:shadow-gold/20"
                     >
                       <span className="text-gold text-xs group-hover:scale-150 transition-all duration-300 group-hover:animate-pulse">●</span>
-                      <span className="text-cream/90 text-sm group-hover:text-cream group-hover:font-semibold transition-all duration-300">{point.name}</span>
+                      <span className="text-cream/90 text-sm font-medium group-hover:text-cream group-hover:font-semibold transition-all duration-300">{point.name}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="bg-navy/50 backdrop-blur-sm rounded-xl p-4 border border-teal/30">
-                <h3 className="font-playfair text-lg font-bold text-teal mb-2.5 flex items-center gap-2">
+                <h3 className="font-playfair text-lg font-bold text-teal mb-3 flex items-center gap-2">
                   <span className="w-2.5 h-2.5 bg-teal rounded-full animate-pulse" />
                   Destination Markets
                 </h3>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="flex flex-wrap gap-2">
                   {destinations.map((point) => (
                     <div
                       key={point.name}
-                      className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg hover:bg-teal/20 transition-all duration-300 cursor-default group hover:scale-105 hover:shadow-lg hover:shadow-teal/20"
+                      className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-teal/10 border border-teal/30 hover:bg-teal/20 hover:border-teal/50 transition-all duration-300 cursor-default group hover:scale-105 hover:shadow-lg hover:shadow-teal/20"
                     >
                       <span className="text-teal text-xs group-hover:scale-150 transition-all duration-300 group-hover:animate-pulse">●</span>
-                      <span className="text-cream/90 text-sm group-hover:text-cream group-hover:font-semibold transition-all duration-300">{point.name}</span>
+                      <span className="text-cream/90 text-sm font-medium group-hover:text-cream group-hover:font-semibold transition-all duration-300">{point.name}</span>
                     </div>
                   ))}
                 </div>
