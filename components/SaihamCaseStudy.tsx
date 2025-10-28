@@ -63,14 +63,14 @@ export default function SaihamCaseStudy() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex justify-center gap-4 mb-12"
+          className="flex justify-center gap-2 sm:gap-4 mb-8 sm:mb-12"
         >
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`
-                px-8 py-3 rounded-lg font-semibold transition-all duration-300
+                px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300
                 ${activeTab === tab.id
                   ? 'bg-navy text-gold shadow-xl scale-105'
                   : 'bg-navy-light/20 text-navy hover:bg-navy-light/40'
@@ -90,9 +90,9 @@ export default function SaihamCaseStudy() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="bg-navy rounded-2xl p-8 md:p-12 border-2 border-gold/50"
+              className="bg-navy rounded-2xl p-4 sm:p-6 md:p-8 lg:p-12 border-2 border-gold/50"
             >
-              <div className="grid md:grid-cols-2 gap-12">
+              <div className="grid md:grid-cols-2 gap-6 md:gap-12">
                 <div>
                   <h3 className="font-playfair text-3xl font-bold text-gold mb-6">
                     About Saiham Group
@@ -129,20 +129,20 @@ export default function SaihamCaseStudy() {
                 </div>
 
                 <div>
-                  <h3 className="font-playfair text-3xl font-bold text-teal mb-6">
+                  <h3 className="font-playfair text-2xl md:text-3xl font-bold text-teal mb-4 md:mb-6">
                     Procurement Volume
                   </h3>
-                  <div className="bg-navy-light rounded-xl p-8 border border-gold/20">
-                    <div className="text-center mb-6">
-                      <div className="font-mono text-6xl font-bold text-gold mb-2">
+                  <div className="bg-navy-light rounded-xl p-4 sm:p-6 md:p-8 border border-gold/20">
+                    <div className="text-center mb-4 md:mb-6">
+                      <div className="font-mono text-4xl sm:text-5xl md:text-6xl font-bold text-gold mb-2">
                         20-35k
                       </div>
-                      <div className="text-cream text-xl">Metric Tons Per Annum</div>
+                      <div className="text-cream text-base sm:text-lg md:text-xl">Metric Tons Per Annum</div>
                     </div>
                     <div className="text-center text-cream/70">
-                      <div className="mb-4">Equivalent to:</div>
-                      <div className="font-mono text-3xl text-teal mb-2">$30-50M</div>
-                      <div className="text-sm">Annual contract value</div>
+                      <div className="mb-3 md:mb-4">Equivalent to:</div>
+                      <div className="font-mono text-2xl sm:text-3xl text-teal mb-2">$30-50M</div>
+                      <div className="text-xs sm:text-sm">Annual contract value</div>
                     </div>
                   </div>
                 </div>
@@ -164,10 +164,10 @@ export default function SaihamCaseStudy() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-navy rounded-2xl p-8 border-2 border-teal/50 hover:border-teal hover:shadow-2xl transition-all duration-300"
+                  className="bg-navy rounded-2xl p-4 sm:p-6 md:p-8 border-2 border-teal/50 hover:border-teal hover:shadow-2xl transition-all duration-300"
                 >
-                  <div className="text-5xl mb-4">{service.icon}</div>
-                  <h4 className="font-playfair text-2xl font-bold text-cream mb-3">
+                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">{service.icon}</div>
+                  <h4 className="font-playfair text-xl sm:text-2xl font-bold text-cream mb-2 sm:mb-3">
                     {service.title}
                   </h4>
                   <p className="text-cream/80 mb-6">

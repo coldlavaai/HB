@@ -101,11 +101,11 @@ export default function GlobalFootprint() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-navy-light/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-gold/20"
+          className="bg-navy-light/30 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 border border-gold/20 overflow-hidden"
         >
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-8 items-center">
             {/* Globe */}
-            <div className="flex items-center justify-center w-full">
+            <div className="flex items-center justify-center w-full overflow-hidden">
               {mounted && (
                 <div
                   className="w-full max-w-[350px] lg:max-w-none"
