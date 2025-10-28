@@ -79,8 +79,7 @@ export default function BackgroundAnimation() {
       </div>
 
       {/* Floating cotton fibers - Layer 1 (slow) */}
-      {mounted && (
-        <motion.div style={{ y: y1 }} className="absolute inset-0">
+      <motion.div style={{ y: y1 }} className="absolute inset-0">
           {cottonFibers.slice(0, 15).map((fiber) => (
             <motion.div
               key={`fiber-1-${fiber.id}`}
@@ -105,12 +104,10 @@ export default function BackgroundAnimation() {
               }}
             />
           ))}
-        </motion.div>
-      )}
+      </motion.div>
 
       {/* Floating cotton fibers - Layer 2 (medium) */}
-      {mounted && (
-        <motion.div style={{ y: y2 }} className="absolute inset-0">
+      <motion.div style={{ y: y2 }} className="absolute inset-0">
           {cottonFibers.slice(15, 30).map((fiber) => (
             <motion.div
               key={`fiber-2-${fiber.id}`}
@@ -135,12 +132,10 @@ export default function BackgroundAnimation() {
               }}
             />
           ))}
-        </motion.div>
-      )}
+      </motion.div>
 
       {/* Floating cotton fibers - Layer 3 (fast) */}
-      {mounted && (
-        <motion.div style={{ y: y3 }} className="absolute inset-0">
+      <motion.div style={{ y: y3 }} className="absolute inset-0">
           {cottonFibers.slice(30).map((fiber) => (
             <motion.div
               key={`fiber-3-${fiber.id}`}
@@ -165,8 +160,7 @@ export default function BackgroundAnimation() {
               }}
             />
           ))}
-        </motion.div>
-      )}
+      </motion.div>
 
       {/* Price chart grid overlay */}
       <motion.div
@@ -189,8 +183,7 @@ export default function BackgroundAnimation() {
       />
 
       {/* Candlestick patterns */}
-      {mounted && (
-        <div className="absolute inset-0 opacity-[0.25]">
+      <div className="absolute inset-0 opacity-[0.25]">
           <svg width="100%" height="100%" className="mix-blend-overlay">
             {Array.from({ length: 20 }).map((_, i) => {
               const x = (i * 5) % 100;
@@ -226,12 +219,10 @@ export default function BackgroundAnimation() {
               );
             })}
           </svg>
-        </div>
-      )}
+      </div>
 
       {/* Trade route pulses */}
-      {mounted && (
-        <div className="absolute inset-0">
+      <div className="absolute inset-0">
           <svg width="100%" height="100%">
             <defs>
               <linearGradient id="route-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -263,8 +254,7 @@ export default function BackgroundAnimation() {
               />
             ))}
           </svg>
-        </div>
-      )}
+      </div>
 
       {/* Market data ticker */}
       <div className="absolute bottom-0 left-0 right-0 h-8 bg-navy/40 backdrop-blur-sm border-t border-gold/30 overflow-hidden">
