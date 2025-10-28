@@ -26,7 +26,7 @@ export default function BusinessVision() {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-navy via-navy-light to-navy py-12 px-6">
+    <section className="py-12 px-6" style={{ background: 'linear-gradient(135deg, rgba(26, 35, 50, 0.9) 0%, rgba(45, 55, 72, 0.9) 50%, rgba(26, 35, 50, 0.9) 100%)' }}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

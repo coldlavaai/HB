@@ -73,7 +73,7 @@ export default function GlobalFootprint() {
   }, [mounted]);
 
   return (
-    <section id="global-footprint" className="bg-navy py-12 px-6">
+    <section id="global-footprint" className="py-12 px-6" style={{ backgroundColor: 'rgba(26, 35, 50, 0.9)' }}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

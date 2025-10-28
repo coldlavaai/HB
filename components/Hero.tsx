@@ -14,7 +14,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-commodity">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(26, 35, 50, 0.95) 0%, rgba(44, 122, 123, 0.95) 100%)' }}>
       {/* Animated background grid */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
