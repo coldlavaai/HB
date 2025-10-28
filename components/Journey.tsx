@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Journey() {
   const milestones = [
@@ -34,6 +35,7 @@ export default function Journey() {
       location: 'Earlam & Partners',
       description: 'Built agency sales network across Bangladesh, Pakistan, Vietnam, Portugal. Managed multi-origin logistics (US, Brazil, Australia, Greece). Designed proprietary execution systems. Produced market analysis blending fundamentals and technicals.',
       icon: '🌾',
+      logo: '/logos/eap-logo.png',
       color: 'teal',
     },
     {
@@ -42,6 +44,7 @@ export default function Journey() {
       location: 'Liverpool Cotton Brokers',
       description: 'Co-owner and Partner. Managing $30-50M annual procurement programs. Leading strategic advisory for mills and merchants. Building sustainability infrastructure (FiberTrace, TextileGenesis). Scaling global operations.',
       icon: '⚡',
+      logo: '/logos/lcb-logo.png',
       color: 'gold',
     },
   ];
@@ -86,10 +89,22 @@ export default function Journey() {
                 {milestone.year}
               </div>
 
-              {/* Icon */}
-              <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
-                {milestone.icon}
-              </div>
+              {/* Icon or Logo */}
+              {milestone.logo ? (
+                <div className="w-16 h-16 mb-3 relative group-hover:scale-110 transition-transform">
+                  <Image
+                    src={milestone.logo}
+                    alt={milestone.location}
+                    fill
+                    style={{ objectFit: 'contain' }}
+                    unoptimized
+                  />
+                </div>
+              ) : (
+                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
+                  {milestone.icon}
+                </div>
+              )}
 
               {/* Title */}
               <h3 className="font-playfair text-lg font-bold text-cream mb-2">
