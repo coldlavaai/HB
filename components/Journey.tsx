@@ -91,7 +91,7 @@ export default function Journey() {
 
               {/* Icon or Logo */}
               {milestone.logo ? (
-                <div className="w-16 h-16 mb-3 relative group-hover:scale-110 transition-transform">
+                <div className="w-24 h-24 mb-3 relative group-hover:scale-110 transition-transform">
                   <Image
                     src={milestone.logo}
                     alt={milestone.location}

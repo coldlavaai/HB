@@ -55,20 +55,25 @@ export default function GlobalFootprint() {
 
   useEffect(() => {
     if (globeEl.current && mounted) {
-      // Auto-rotate
-      globeEl.current.controls().autoRotate = true;
-      globeEl.current.controls().autoRotateSpeed = 0.5;
+      const controls = globeEl.current.controls();
 
-      // Completely disable zoom
-      globeEl.current.controls().enableZoom = false;
-      globeEl.current.controls().enablePan = false;
-      globeEl.current.controls().enableRotate = true;
-      globeEl.current.controls().minDistance = 200;
-      globeEl.current.controls().maxDistance = 200;
+      // Enable ONLY auto-rotation
+      controls.autoRotate = true;
+      controls.autoRotateSpeed = 0.5;
 
-      // Limit vertical rotation to keep it natural
-      globeEl.current.controls().minPolarAngle = Math.PI / 3.5;
-      globeEl.current.controls().maxPolarAngle = Math.PI - Math.PI / 3.5;
+      // DISABLE ALL USER INTERACTIONS COMPLETELY
+      controls.enableZoom = false;
+      controls.enablePan = false;
+      controls.enableRotate = false; // NO manual rotation
+      controls.enabled = false; // Disable all controls
+
+      // Lock camera distance
+      controls.minDistance = 250;
+      controls.maxDistance = 250;
+
+      // Remove all mouse button mappings
+      controls.mouseButtons = {};
+      controls.touches = {};
     }
   }, [mounted]);
 
@@ -102,7 +107,14 @@ export default function GlobalFootprint() {
             {/* Globe */}
             <div className="flex items-center justify-center">
               {mounted && (
-                <div onWheel={(e) => e.preventDefault()} style={{ touchAction: 'none' }}>
+                <div
+                  onWheel={(e) => { e.preventDefault(); e.stopPropagation(); }}
+                  onMouseDown={(e) => { e.preventDefault(); e.stopPropagation(); }}
+                  onMouseMove={(e) => { e.preventDefault(); e.stopPropagation(); }}
+                  onTouchStart={(e) => { e.preventDefault(); e.stopPropagation(); }}
+                  onTouchMove={(e) => { e.preventDefault(); e.stopPropagation(); }}
+                  style={{ touchAction: 'none', pointerEvents: 'none' }}
+                >
                   <Globe
                     ref={globeEl}
                     globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
