@@ -47,10 +47,10 @@ export default function Skills() {
   ];
 
   const expertise = [
-    { icon: '🌍', title: 'Geographic Coverage', items: ['US', 'Brazil', 'Australia', 'Greece', 'West Africa', 'Bangladesh', 'Pakistan', 'Vietnam', 'Turkey', 'Portugal'] },
-    { icon: '🏛️', title: 'Platforms & Tools', items: ['ICE Futures', 'Bloomberg Terminal', 'TradeFlow Systems', 'FiberTrace', 'TextileGenesis'] },
-    { icon: '📈', title: 'Market Expertise', items: ['Fundamentals Analysis', 'Technical Analysis', 'Macro Positioning', 'Supply/Demand Modeling'] },
-    { icon: '🤝', title: 'Partnership Model', items: ['Direct Mill Contracting', 'Merchant Relationships', 'Producer Networks', 'Agency Sales'] },
+    { icon: '🌍', title: 'Geographic Coverage', items: ['US', 'Brazil', 'Australia', 'Greece', 'West Africa', 'Bangladesh', 'Pakistan', 'Vietnam', 'Turkey', 'Portugal'], twoColumns: true },
+    { icon: '🏛️', title: 'Platforms & Tools', items: ['ICE Futures', 'Bloomberg Terminal', 'TradeFlow Systems', 'FiberTrace', 'TextileGenesis'], twoColumns: false },
+    { icon: '📈', title: 'Market Expertise', items: ['Fundamentals Analysis', 'Technical Analysis', 'Macro Positioning', 'Supply/Demand Modeling'], twoColumns: false },
+    { icon: '🤝', title: 'Partnership Model', items: ['Direct Mill Contracting', 'Merchant Relationships', 'Producer Networks', 'Agency Sales'], twoColumns: false },
   ];
 
   return (
@@ -133,17 +133,17 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-navy-light rounded-xl p-6 border border-gold/20 hover:border-gold/50 transition-all duration-300"
+              className="bg-navy-light rounded-xl p-5 border border-gold/20 hover:border-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-gold/10"
             >
-              <div className="text-4xl mb-4">{area.icon}</div>
-              <h4 className="font-playfair text-lg font-bold text-cream mb-4">
+              <div className="text-3xl mb-3">{area.icon}</div>
+              <h4 className="font-playfair text-base font-bold text-cream mb-3">
                 {area.title}
               </h4>
-              <ul className="space-y-2">
+              <ul className={`space-y-1.5 ${area.twoColumns ? 'grid grid-cols-2 gap-x-2' : ''}`}>
                 {area.items.map((item) => (
-                  <li key={item} className="text-cream/70 text-sm flex items-center gap-2">
-                    <span className="w-1 h-1 bg-gold rounded-full" />
-                    {item}
+                  <li key={item} className="text-cream/70 text-xs flex items-center gap-1.5">
+                    <span className="w-1 h-1 bg-gold rounded-full flex-shrink-0" />
+                    <span className="leading-tight">{item}</span>
                   </li>
                 ))}
               </ul>
