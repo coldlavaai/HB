@@ -113,7 +113,7 @@ export default function Hero() {
           className="mt-16"
         >
           <a
-            href="#career-journey"
+            href="#journey"
             className="group relative inline-block px-8 py-4 bg-gold text-navy font-semibold rounded-lg overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-gold/50"
           >
             <span className="relative z-10 flex items-center gap-2">
