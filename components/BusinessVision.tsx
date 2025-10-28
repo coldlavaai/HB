@@ -26,7 +26,7 @@ export default function BusinessVision() {
   ];
 
   return (
-    <section className="py-12 px-6">
+    <section className="py-12 px-6" style={{ backgroundColor: 'rgba(26, 35, 50, 0.7)' }}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
