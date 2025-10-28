@@ -102,25 +102,28 @@ export default function GlobalFootprint() {
             {/* Globe */}
             <div className="flex items-center justify-center">
               {mounted && (
-                <Globe
-                  ref={globeEl}
-                  globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-                  backgroundColor="rgba(0,0,0,0)"
-                  pointsData={allPoints}
-                  pointLabel="name"
-                  pointAltitude={0.01}
-                  pointRadius="size"
-                  pointColor="color"
-                  arcsData={routes}
-                  arcColor="color"
-                  arcDashLength={0.4}
-                  arcDashGap={0.2}
-                  arcDashAnimateTime={3000}
-                  arcStroke={0.5}
-                  arcsTransitionDuration={0}
-                  height={450}
-                  width={450}
-                />
+                <div onWheel={(e) => e.preventDefault()} style={{ touchAction: 'none' }}>
+                  <Globe
+                    ref={globeEl}
+                    globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
+                    backgroundColor="rgba(0,0,0,0)"
+                    pointsData={allPoints}
+                    pointLabel="name"
+                    pointAltitude={0.01}
+                    pointRadius="size"
+                    pointColor="color"
+                    arcsData={routes}
+                    arcColor="color"
+                    arcDashLength={0.4}
+                    arcDashGap={0.2}
+                    arcDashAnimateTime={3000}
+                    arcStroke={0.5}
+                    arcsTransitionDuration={0}
+                    height={450}
+                    width={450}
+                    enablePointerInteraction={false}
+                  />
+                </div>
               )}
             </div>
 

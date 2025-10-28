@@ -64,7 +64,11 @@ export default function Journey() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="relative">
+          {/* Vertical timeline line */}
+          <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-gold via-teal to-gold transform -translate-x-1/2" />
+
+          <div className="space-y-12">
           {milestones.map((milestone, index) => (
             <motion.div
               key={index}
@@ -73,9 +77,22 @@ export default function Journey() {
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`
-                relative bg-navy rounded-xl p-5 border-2
-                ${milestone.color === 'gold' ? 'border-gold/50 hover:border-gold' : 'border-teal/50 hover:border-teal'}
-                transition-all duration-300 hover:shadow-2xl group
+                relative lg:w-5/12
+                ${index % 2 === 0 ? 'lg:mr-auto lg:pr-12' : 'lg:ml-auto lg:pl-12'}
+              `}
+            >
+              {/* Timeline dot */}
+              <div className={`
+                hidden lg:block absolute top-8 w-6 h-6 rounded-full border-4 border-navy z-10
+                ${index % 2 === 0 ? 'right-0 translate-x-1/2' : 'left-0 -translate-x-1/2'}
+                ${milestone.color === 'gold' ? 'bg-gold' : 'bg-teal'}
+              `} />
+
+              <div className={`
+                bg-navy rounded-xl p-6 border-2
+                ${milestone.color === 'gold' ? 'border-gold/50 hover:border-gold hover:shadow-gold/30' : 'border-teal/50 hover:border-teal hover:shadow-teal/30'}
+                hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1
+                transition-all duration-500 ease-out group cursor-default
               `}
             >
               {/* Year badge */}
@@ -108,18 +125,10 @@ export default function Journey() {
               <p className="text-cream/70 text-sm leading-relaxed">
                 {milestone.description}
               </p>
-
-              {/* Progress indicator */}
-              {index < milestones.length - 1 && (
-                <div className="hidden lg:block absolute -right-2 top-1/2 transform -translate-y-1/2 z-10">
-                  <div className={`
-                    w-4 h-4 rotate-45
-                    ${milestone.color === 'gold' ? 'bg-gold' : 'bg-teal'}
-                  `} />
-                </div>
-              )}
+              </div>
             </motion.div>
           ))}
+          </div>
         </div>
 
         {/* Value proposition */}

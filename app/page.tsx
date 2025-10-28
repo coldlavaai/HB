@@ -1,6 +1,5 @@
 import Hero from '@/components/Hero';
 import Journey from '@/components/Journey';
-import CareerTimeline from '@/components/CareerTimeline';
 import GlobalFootprint from '@/components/GlobalFootprint';
 import ByTheNumbers from '@/components/ByTheNumbers';
 import SaihamCaseStudy from '@/components/SaihamCaseStudy';
@@ -13,7 +12,6 @@ export default function Home() {
     <main className="overflow-x-hidden">
       <Hero />
       <Journey />
-      <CareerTimeline />
       <GlobalFootprint />
       <SaihamCaseStudy />
       <BusinessVision />
