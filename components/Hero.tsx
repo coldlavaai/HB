@@ -1,10 +1,13 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 500], [0, 150]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   useEffect(() => {
     setMounted(true);
@@ -49,7 +52,7 @@ export default function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
+      <motion.div style={{ y, opacity }} className="relative z-10 text-center px-6 max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -110,13 +113,22 @@ export default function Hero() {
           className="mt-16"
         >
           <a
-            href="#global-footprint"
-            className="inline-block px-8 py-4 bg-gold hover:bg-gold-dark text-navy font-semibold rounded-lg transition-all transform hover:scale-105 hover:shadow-xl"
+            href="#journey"
+            className="group relative inline-block px-8 py-4 bg-gold text-navy font-semibold rounded-lg overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-gold/50"
           >
-            Explore My Journey
+            <span className="relative z-10 flex items-center gap-2">
+              Explore My Journey
+              <motion.span
+                animate={{ x: [0, 5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+              >
+                →
+              </motion.span>
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-gold-dark to-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </a>
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div

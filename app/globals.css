@@ -7,10 +7,16 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
   }
 
   body {
     @apply bg-cream text-navy;
+  }
+
+  /* Smooth transitions for all interactive elements */
+  a, button {
+    @apply transition-all duration-300;
   }
 }
 

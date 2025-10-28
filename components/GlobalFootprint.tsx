@@ -130,9 +130,12 @@ export default function GlobalFootprint() {
                 </h3>
                 <div className="grid grid-cols-2 gap-3">
                   {origins.map((point) => (
-                    <div key={point.name} className="flex items-center gap-2">
-                      <span className="text-gold text-xs">●</span>
-                      <span className="text-cream/90 text-sm">{point.name}</span>
+                    <div
+                      key={point.name}
+                      className="flex items-center gap-2 px-2 py-1 rounded hover:bg-gold/10 transition-all duration-200 cursor-default group"
+                    >
+                      <span className="text-gold text-xs group-hover:scale-125 transition-transform">●</span>
+                      <span className="text-cream/90 text-sm group-hover:text-cream">{point.name}</span>
                     </div>
                   ))}
                 </div>
@@ -145,9 +148,12 @@ export default function GlobalFootprint() {
                 </h3>
                 <div className="grid grid-cols-2 gap-3">
                   {destinations.map((point) => (
-                    <div key={point.name} className="flex items-center gap-2">
-                      <span className="text-teal text-xs">●</span>
-                      <span className="text-cream/90 text-sm">{point.name}</span>
+                    <div
+                      key={point.name}
+                      className="flex items-center gap-2 px-2 py-1 rounded hover:bg-teal/10 transition-all duration-200 cursor-default group"
+                    >
+                      <span className="text-teal text-xs group-hover:scale-125 transition-transform">●</span>
+                      <span className="text-cream/90 text-sm group-hover:text-cream">{point.name}</span>
                     </div>
                   ))}
                 </div>
