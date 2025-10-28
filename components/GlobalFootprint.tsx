@@ -79,72 +79,86 @@ export default function GlobalFootprint() {
           </p>
         </motion.div>
 
+        {/* Single Panel with Globe and Lists */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-navy-light/30 backdrop-blur-sm rounded-2xl p-8 border border-gold/20"
+          className="bg-navy-light/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-gold/20"
         >
-          {mounted && (
-            <Globe
-              ref={globeEl}
-              globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-              backgroundColor="rgba(0,0,0,0)"
-              pointsData={allPoints}
-              pointLabel="name"
-              pointAltitude={0.01}
-              pointRadius="size"
-              pointColor="color"
-              arcsData={routes}
-              arcColor="color"
-              arcDashLength={0.4}
-              arcDashGap={0.2}
-              arcDashAnimateTime={3000}
-              arcStroke={0.5}
-              arcsTransitionDuration={0}
-              height={500}
-              width={typeof window !== 'undefined' ? Math.min(window.innerWidth - 100, 1000) : 1000}
-            />
-          )}
-        </motion.div>
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            {/* Globe */}
+            <div className="flex items-center justify-center">
+              {mounted && (
+                <Globe
+                  ref={globeEl}
+                  globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
+                  backgroundColor="rgba(0,0,0,0)"
+                  pointsData={allPoints}
+                  pointLabel="name"
+                  pointAltitude={0.01}
+                  pointRadius="size"
+                  pointColor="color"
+                  arcsData={routes}
+                  arcColor="color"
+                  arcDashLength={0.4}
+                  arcDashGap={0.2}
+                  arcDashAnimateTime={3000}
+                  arcStroke={0.5}
+                  arcsTransitionDuration={0}
+                  height={450}
+                  width={450}
+                />
+              )}
+            </div>
 
-        {/* Legend */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-8 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto"
-        >
-          <div className="bg-navy-light/30 backdrop-blur-sm rounded-xl p-6 border border-gold/20">
-            <h3 className="font-playfair text-2xl font-bold text-gold mb-4 flex items-center gap-3">
-              <span className="w-4 h-4 bg-gold rounded-full" />
-              Origin Markets
-            </h3>
-            <ul className="space-y-2 text-cream/80">
-              {origins.map((point) => (
-                <li key={point.name} className="flex items-center gap-2">
-                  <span className="text-gold">•</span>
-                  {point.name}
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Country Lists */}
+            <div className="space-y-6">
+              <div className="bg-navy/50 backdrop-blur-sm rounded-xl p-6 border border-gold/30">
+                <h3 className="font-playfair text-xl font-bold text-gold mb-4 flex items-center gap-3">
+                  <span className="w-3 h-3 bg-gold rounded-full animate-pulse" />
+                  Origin Markets
+                </h3>
+                <div className="grid grid-cols-2 gap-3">
+                  {origins.map((point) => (
+                    <div key={point.name} className="flex items-center gap-2">
+                      <span className="text-gold text-xs">●</span>
+                      <span className="text-cream/90 text-sm">{point.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-          <div className="bg-navy-light/30 backdrop-blur-sm rounded-xl p-6 border border-teal/20">
-            <h3 className="font-playfair text-2xl font-bold text-teal mb-4 flex items-center gap-3">
-              <span className="w-4 h-4 bg-teal rounded-full" />
-              Destination Markets
-            </h3>
-            <ul className="space-y-2 text-cream/80">
-              {destinations.map((point) => (
-                <li key={point.name} className="flex items-center gap-2">
-                  <span className="text-teal">•</span>
-                  {point.name}
-                </li>
-              ))}
-            </ul>
+              <div className="bg-navy/50 backdrop-blur-sm rounded-xl p-6 border border-teal/30">
+                <h3 className="font-playfair text-xl font-bold text-teal mb-4 flex items-center gap-3">
+                  <span className="w-3 h-3 bg-teal rounded-full animate-pulse" />
+                  Destination Markets
+                </h3>
+                <div className="grid grid-cols-2 gap-3">
+                  {destinations.map((point) => (
+                    <div key={point.name} className="flex items-center gap-2">
+                      <span className="text-teal text-xs">●</span>
+                      <span className="text-cream/90 text-sm">{point.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Summary stats */}
+              <div className="bg-gradient-to-r from-gold/10 to-teal/10 rounded-xl p-4 border border-gold/20">
+                <div className="grid grid-cols-2 gap-4 text-center">
+                  <div>
+                    <div className="font-mono text-2xl font-bold text-gold">5</div>
+                    <div className="text-cream/70 text-xs">Origin Countries</div>
+                  </div>
+                  <div>
+                    <div className="font-mono text-2xl font-bold text-teal">5</div>
+                    <div className="text-cream/70 text-xs">Destination Markets</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
