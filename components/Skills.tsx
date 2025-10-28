@@ -6,51 +6,86 @@ export default function Skills() {
   const skillCategories = [
     {
       title: 'Trading & Procurement',
+      icon: '📊',
       color: 'gold',
       skills: [
-        { name: 'Physical Cotton Trading', level: 95 },
-        { name: 'Multi-Origin Sourcing', level: 90 },
-        { name: 'Contract Negotiation', level: 92 },
-        { name: 'Price Discovery', level: 88 },
+        'Physical Cotton Trading',
+        'Multi-Origin Sourcing',
+        'Contract Negotiation',
+        'Price Discovery',
+        'Merchant Relations',
+        'Producer Networks',
       ],
     },
     {
       title: 'Risk Management',
+      icon: '🛡️',
       color: 'teal',
       skills: [
-        { name: 'Futures & Options', level: 90 },
-        { name: 'Hedge Strategy', level: 93 },
-        { name: 'Position Management', level: 91 },
-        { name: 'Market Analysis', level: 89 },
+        'Futures & Options',
+        'Hedge Strategy',
+        'Position Management',
+        'Market Analysis',
+        'On-Call Fixations',
+        'Portfolio Optimization',
       ],
     },
     {
       title: 'Operations & Logistics',
+      icon: '🚢',
       color: 'gold',
       skills: [
-        { name: 'Shipment Execution', level: 94 },
-        { name: 'LC Documentation', level: 87 },
-        { name: 'Quality Control', level: 85 },
-        { name: 'Supply Chain Management', level: 88 },
+        'Shipment Execution',
+        'LC Documentation',
+        'Quality Control',
+        'Supply Chain Management',
+        'Timeline Coordination',
+        'Trade Flow Systems',
       ],
     },
     {
-      title: 'Client Relations',
+      title: 'Strategic Advisory',
+      icon: '💡',
       color: 'teal',
       skills: [
-        { name: 'Mill Relationship Management', level: 95 },
-        { name: 'Strategic Advisory', level: 92 },
-        { name: 'Market Intelligence', level: 90 },
-        { name: 'Sustainability Integration', level: 86 },
+        'Mill Relationship Management',
+        'Market Intelligence',
+        'Strategic Planning',
+        'Sustainability Integration',
+        'Executive Consultation',
+        'Risk Assessment',
       ],
     },
-  ];
-
-  const expertise = [
-    { icon: '🌍', title: 'Geographic Coverage', items: ['US', 'Brazil', 'Australia', 'Greece', 'West Africa', 'Bangladesh', 'Pakistan', 'Vietnam', 'Turkey', 'Portugal'], twoColumns: true },
-    { icon: '🏛️', title: 'Platforms & Tools', items: ['ICE Futures', 'Bloomberg Terminal', 'TradeFlow Systems', 'FiberTrace', 'TextileGenesis'], twoColumns: false },
-    { icon: '📈', title: 'Market Expertise', items: ['Fundamentals Analysis', 'Technical Analysis', 'Macro Positioning', 'Supply/Demand Modeling'], twoColumns: false },
-    { icon: '🤝', title: 'Partnership Model', items: ['Direct Mill Contracting', 'Merchant Relationships', 'Producer Networks', 'Agency Sales'], twoColumns: false },
+    {
+      title: 'Market Expertise',
+      icon: '📈',
+      color: 'gold',
+      skills: [
+        'Fundamentals Analysis',
+        'Technical Analysis',
+        'Macro Positioning',
+        'Supply/Demand Modeling',
+        'Bloomberg Terminal',
+        'ICE Futures',
+      ],
+    },
+    {
+      title: 'Global Coverage',
+      icon: '🌍',
+      color: 'teal',
+      skills: [
+        'United States',
+        'Brazil',
+        'Australia',
+        'Greece',
+        'West Africa',
+        'Bangladesh',
+        'Pakistan',
+        'Vietnam',
+        'Turkey',
+        'Portugal',
+      ],
+    },
   ];
 
   return (
@@ -61,7 +96,7 @@ export default function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-8"
+          className="text-center mb-10"
         >
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-cream mb-4">
             Skills & Expertise
@@ -71,18 +106,17 @@ export default function Skills() {
           </p>
         </motion.div>
 
-        {/* Skill Bars */}
-        <div className="grid md:grid-cols-2 gap-8 mb-10">
-          {skillCategories.map((category, catIndex) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skillCategories.map((category, index) => (
             <motion.div
               key={category.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: catIndex * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
               className={`
-                bg-navy-light rounded-2xl p-8 border-2
-                ${category.color === 'gold' ? 'border-gold/30 hover:border-gold/60 hover:shadow-gold/20' : 'border-teal/30 hover:border-teal/60 hover:shadow-teal/20'}
+                bg-navy-light rounded-2xl p-6 border-2
+                ${category.color === 'gold' ? 'border-gold/30 hover:border-gold/60' : 'border-teal/30 hover:border-teal/60'}
                 hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1
                 transition-all duration-500 ease-out cursor-default
                 group relative overflow-hidden
@@ -94,75 +128,41 @@ export default function Skills() {
                 ${category.color === 'gold' ? 'bg-gradient-to-br from-gold/10 via-transparent to-transparent' : 'bg-gradient-to-br from-teal/10 via-transparent to-transparent'}
               `} />
 
+              {/* Icon */}
+              <div className="relative z-10 text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                {category.icon}
+              </div>
+
+              {/* Title */}
               <h3 className={`
                 relative z-10
-                font-playfair text-2xl font-bold mb-6
+                font-playfair text-xl font-bold mb-5
                 ${category.color === 'gold' ? 'text-gold' : 'text-teal'}
               `}>
                 {category.title}
               </h3>
 
-              <div className="space-y-6">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-cream/90 font-medium">{skill.name}</span>
-                      <span className="text-cream/60 font-mono text-sm">{skill.level}%</span>
-                    </div>
-                    <div className="h-2 bg-navy-dark rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: catIndex * 0.1 + skillIndex * 0.1 + 0.2 }}
-                        className={`
-                          h-full rounded-full
-                          ${category.color === 'gold' ? 'bg-gradient-to-r from-gold-dark to-gold' : 'bg-gradient-to-r from-teal-dark to-teal'}
-                        `}
-                      />
-                    </div>
-                  </div>
+              {/* Skills as tags */}
+              <div className="relative z-10 flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className={`
+                      px-3 py-1.5 rounded-lg text-xs font-medium
+                      ${category.color === 'gold'
+                        ? 'bg-gold/10 text-gold border border-gold/30'
+                        : 'bg-teal/10 text-teal border border-teal/30'}
+                      transition-all duration-300
+                      hover:scale-105 hover:shadow-lg
+                    `}
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* Expertise Areas */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
-          {expertise.map((area, index) => (
-            <motion.div
-              key={area.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-navy-light rounded-xl p-5 border border-gold/20 hover:border-gold/60 transition-all duration-500 hover:shadow-2xl hover:shadow-gold/20 hover:scale-105 hover:-translate-y-2 cursor-default group relative overflow-hidden"
-            >
-              {/* Hover glow */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-gold/10 via-transparent to-transparent" />
-
-              <div className="text-3xl mb-3 relative z-10 group-hover:scale-110 transition-transform duration-300">{area.icon}</div>
-              <h4 className="font-playfair text-base font-bold text-cream mb-3">
-                {area.title}
-              </h4>
-              <ul className={`space-y-1.5 ${area.twoColumns ? 'grid grid-cols-2 gap-x-2' : ''}`}>
-                {area.items.map((item) => (
-                  <li key={item} className="text-cream/70 text-xs flex items-center gap-1.5">
-                    <span className="w-1 h-1 bg-gold rounded-full flex-shrink-0" />
-                    <span className="leading-tight">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );
