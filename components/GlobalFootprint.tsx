@@ -78,7 +78,7 @@ export default function GlobalFootprint() {
   }, [mounted]);
 
   return (
-    <section id="global-footprint" className="py-12 px-6" style={{ backgroundColor: 'rgba(26, 35, 50, 0.9)' }}>
+    <section id="global-footprint" className="py-10 px-6" style={{ backgroundColor: 'rgba(26, 35, 50, 0.7)' }}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -131,8 +131,8 @@ export default function GlobalFootprint() {
                     arcDashAnimateTime={3000}
                     arcStroke={0.5}
                     arcsTransitionDuration={0}
-                    height={450}
-                    width={450}
+                    height={400}
+                    width={400}
                     enablePointerInteraction={false}
                   />
                 </div>
@@ -140,17 +140,17 @@ export default function GlobalFootprint() {
             </div>
 
             {/* Country Lists */}
-            <div className="space-y-6">
-              <div className="bg-navy/50 backdrop-blur-sm rounded-xl p-6 border border-gold/30">
-                <h3 className="font-playfair text-xl font-bold text-gold mb-4 flex items-center gap-3">
-                  <span className="w-3 h-3 bg-gold rounded-full animate-pulse" />
+            <div className="space-y-3">
+              <div className="bg-navy/50 backdrop-blur-sm rounded-xl p-4 border border-gold/30">
+                <h3 className="font-playfair text-lg font-bold text-gold mb-2.5 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 bg-gold rounded-full animate-pulse" />
                   Origin Markets
                 </h3>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2">
                   {origins.map((point) => (
                     <div
                       key={point.name}
-                      className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gold/20 transition-all duration-300 cursor-default group hover:scale-105 hover:shadow-lg hover:shadow-gold/20"
+                      className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg hover:bg-gold/20 transition-all duration-300 cursor-default group hover:scale-105 hover:shadow-lg hover:shadow-gold/20"
                     >
                       <span className="text-gold text-xs group-hover:scale-150 transition-all duration-300 group-hover:animate-pulse">●</span>
                       <span className="text-cream/90 text-sm group-hover:text-cream group-hover:font-semibold transition-all duration-300">{point.name}</span>
@@ -159,16 +159,16 @@ export default function GlobalFootprint() {
                 </div>
               </div>
 
-              <div className="bg-navy/50 backdrop-blur-sm rounded-xl p-6 border border-teal/30">
-                <h3 className="font-playfair text-xl font-bold text-teal mb-4 flex items-center gap-3">
-                  <span className="w-3 h-3 bg-teal rounded-full animate-pulse" />
+              <div className="bg-navy/50 backdrop-blur-sm rounded-xl p-4 border border-teal/30">
+                <h3 className="font-playfair text-lg font-bold text-teal mb-2.5 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 bg-teal rounded-full animate-pulse" />
                   Destination Markets
                 </h3>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2">
                   {destinations.map((point) => (
                     <div
                       key={point.name}
-                      className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-teal/20 transition-all duration-300 cursor-default group hover:scale-105 hover:shadow-lg hover:shadow-teal/20"
+                      className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg hover:bg-teal/20 transition-all duration-300 cursor-default group hover:scale-105 hover:shadow-lg hover:shadow-teal/20"
                     >
                       <span className="text-teal text-xs group-hover:scale-150 transition-all duration-300 group-hover:animate-pulse">●</span>
                       <span className="text-cream/90 text-sm group-hover:text-cream group-hover:font-semibold transition-all duration-300">{point.name}</span>
@@ -178,14 +178,14 @@ export default function GlobalFootprint() {
               </div>
 
               {/* Summary stats */}
-              <div className="bg-gradient-to-r from-gold/10 to-teal/10 rounded-xl p-4 border border-gold/20">
-                <div className="grid grid-cols-2 gap-4 text-center">
+              <div className="bg-gradient-to-r from-gold/10 to-teal/10 rounded-xl p-3 border border-gold/20">
+                <div className="grid grid-cols-2 gap-3 text-center">
                   <div>
-                    <div className="font-mono text-2xl font-bold text-gold">5</div>
+                    <div className="font-mono text-xl font-bold text-gold">5</div>
                     <div className="text-cream/70 text-xs">Origin Countries</div>
                   </div>
                   <div>
-                    <div className="font-mono text-2xl font-bold text-teal">5</div>
+                    <div className="font-mono text-xl font-bold text-teal">5</div>
                     <div className="text-cream/70 text-xs">Destination Markets</div>
                   </div>
                 </div>
