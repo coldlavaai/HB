@@ -12,10 +12,10 @@ export default function Contact() {
       href: 'mailto:hwbconsultingltd@outlook.com',
     },
     {
-      icon: '📱',
-      label: 'Mobile',
-      value: '+44 7380 949 6591',
-      href: 'tel:+447380949659',
+      icon: '💬',
+      label: 'WhatsApp',
+      value: 'Chat Now',
+      href: 'https://wa.me/447380949659',
     },
     {
       icon: '📍',
@@ -104,7 +104,7 @@ export default function Contact() {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             <span className="text-2xl relative z-10 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">✉️</span>
-            <span className="relative z-10">Send Message</span>
+            <span className="relative z-10">Send Email</span>
           </a>
         </motion.div>
 

@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   description: "Partner at Liverpool Cotton Brokers - Cotton industry professional with 8 years' experience spanning physical procurement, origination, trading strategy, and mill relationship management across global markets.",
   keywords: "cotton trading, commodity broker, Liverpool Cotton Brokers, Harry Bennett, commodity trading, procurement",
   authors: [{ name: "Harry Bennett" }],
+  icons: {
+    icon: "/logos/lcb-logo.png",
+    shortcut: "/logos/lcb-logo.png",
+    apple: "/logos/lcb-logo.png",
+  },
   openGraph: {
     title: "Harry Bennett | Cotton Trading Specialist",
     description: "Partner at Liverpool Cotton Brokers - Global cotton trading and procurement specialist",
