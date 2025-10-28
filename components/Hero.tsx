@@ -58,7 +58,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <h1 className="font-playfair text-6xl md:text-8xl lg:text-9xl font-bold text-cream mb-6 tracking-tight">
+          <h1 className="font-playfair text-5xl md:text-8xl lg:text-9xl font-bold text-cream mb-6 tracking-tight leading-tight">
             Harry Bennett
           </h1>
         </motion.div>

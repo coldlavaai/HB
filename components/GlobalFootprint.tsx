@@ -105,9 +105,10 @@ export default function GlobalFootprint() {
         >
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             {/* Globe */}
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center w-full">
               {mounted && (
                 <div
+                  className="w-full max-w-[350px] lg:max-w-none"
                   onWheel={(e) => { e.preventDefault(); e.stopPropagation(); }}
                   onMouseDown={(e) => { e.preventDefault(); e.stopPropagation(); }}
                   onMouseMove={(e) => { e.preventDefault(); e.stopPropagation(); }}
@@ -131,8 +132,8 @@ export default function GlobalFootprint() {
                     arcDashAnimateTime={3000}
                     arcStroke={0.5}
                     arcsTransitionDuration={0}
-                    height={550}
-                    width={550}
+                    height={typeof window !== 'undefined' && window.innerWidth < 768 ? 350 : 550}
+                    width={typeof window !== 'undefined' && window.innerWidth < 768 ? 350 : 550}
                     enablePointerInteraction={false}
                   />
                 </div>
