@@ -96,15 +96,24 @@ export default function ByTheNumbers() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className={`
                 relative bg-navy rounded-2xl p-6 border-2
-                ${stat.color === 'gold' ? 'border-gold' : 'border-teal'}
-                hover:shadow-2xl hover:scale-105 transition-all duration-300
-                overflow-hidden group
+                ${stat.color === 'gold' ? 'border-gold hover:border-gold/80 hover:shadow-gold/30' : 'border-teal hover:border-teal/80 hover:shadow-teal/30'}
+                hover:shadow-2xl hover:scale-110 hover:-translate-y-3
+                transition-all duration-500 ease-out
+                overflow-hidden group cursor-default
               `}
             >
               {/* Background gradient */}
               <div className={`
-                absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300
-                ${stat.color === 'gold' ? 'bg-gradient-to-br from-gold to-gold-dark' : 'bg-gradient-to-br from-teal to-teal-dark'}
+                absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500
+                ${stat.color === 'gold' ? 'bg-gradient-to-br from-gold via-gold to-transparent' : 'bg-gradient-to-br from-teal via-teal to-transparent'}
+              `} />
+
+              {/* Animated shimmer effect */}
+              <div className={`
+                absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500
+                bg-gradient-to-r from-transparent via-white/10 to-transparent
+                -translate-x-full group-hover:translate-x-full
+                transition-transform duration-1000 ease-out
               `} />
 
               <div className="relative z-10">

@@ -54,13 +54,16 @@ export default function Contact() {
               {info.href ? (
                 <a
                   href={info.href}
-                  className="block bg-navy rounded-2xl p-8 border-2 border-gold/50 hover:border-gold hover:shadow-2xl transition-all duration-300 group text-center"
+                  className="block bg-navy rounded-2xl p-8 border-2 border-gold/50 hover:border-gold hover:shadow-2xl hover:shadow-gold/30 hover:scale-105 hover:-translate-y-2 transition-all duration-500 ease-out group text-center relative overflow-hidden"
                 >
-                  <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">
+                  {/* Hover glow */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-gold/10 via-transparent to-transparent" />
+
+                  <div className="text-5xl mb-4 group-hover:scale-125 group-hover:rotate-12 transition-all duration-500 relative z-10">
                     {info.icon}
                   </div>
-                  <div className="text-gold font-semibold mb-2">{info.label}</div>
-                  <div className="text-cream font-mono text-sm">{info.value}</div>
+                  <div className="text-gold font-semibold mb-2 relative z-10">{info.label}</div>
+                  <div className="text-cream font-mono text-sm relative z-10 group-hover:text-cream/100 transition-colors duration-300">{info.value}</div>
                 </a>
               ) : (
                 <div className="bg-navy rounded-2xl p-8 border-2 border-teal/50 text-center">
@@ -87,18 +90,20 @@ export default function Contact() {
           <a
             href="/pdf"
             target="_blank"
-            className="px-8 py-4 bg-navy hover:bg-navy-light text-gold border-2 border-gold font-semibold rounded-lg transition-all transform hover:scale-105 hover:shadow-xl flex items-center gap-3"
+            className="px-8 py-4 bg-navy hover:bg-navy-light text-gold border-2 border-gold font-semibold rounded-lg transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 hover:shadow-2xl hover:shadow-gold/30 flex items-center gap-3 group relative overflow-hidden"
           >
-            <span className="text-2xl">📄</span>
-            <span>Download PDF Version</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-gold/10 via-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <span className="text-2xl relative z-10 group-hover:scale-110 transition-transform duration-300">📄</span>
+            <span className="relative z-10">Download PDF Version</span>
           </a>
 
           <a
             href="mailto:hwbconsultingltd@outlook.com?subject=Inquiry from Interactive CV"
-            className="px-8 py-4 bg-gold hover:bg-gold-dark text-navy font-semibold rounded-lg transition-all transform hover:scale-105 hover:shadow-xl flex items-center gap-3"
+            className="px-8 py-4 bg-gold hover:bg-gold-dark text-navy font-semibold rounded-lg transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 hover:shadow-2xl hover:shadow-gold/50 flex items-center gap-3 group relative overflow-hidden"
           >
-            <span className="text-2xl">✉️</span>
-            <span>Send Message</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <span className="text-2xl relative z-10 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">✉️</span>
+            <span className="relative z-10">Send Message</span>
           </a>
         </motion.div>
 

@@ -122,10 +122,19 @@ export default function CareerTimeline() {
               `}>
                 <div className={`
                   bg-navy-light rounded-2xl p-6 md:p-8 border-2
-                  ${item.color === 'gold' ? 'border-gold/50' : 'border-teal/50'}
-                  hover:border-${item.color} hover:shadow-2xl transition-all duration-300
+                  ${item.color === 'gold' ? 'border-gold/50 hover:border-gold hover:shadow-gold/20' : 'border-teal/50 hover:border-teal hover:shadow-teal/20'}
+                  hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-2
+                  transition-all duration-500 ease-out
+                  cursor-default
                   group
+                  relative overflow-hidden
                 `}>
+                  {/* Hover glow effect */}
+                  <div className={`
+                    absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500
+                    ${item.color === 'gold' ? 'bg-gradient-to-br from-gold/10 via-transparent to-transparent' : 'bg-gradient-to-br from-teal/10 via-transparent to-transparent'}
+                  `} />
+
                   {/* Logo */}
                   {item.logo && (
                     <div className="mb-4 flex justify-start">

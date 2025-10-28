@@ -135,10 +135,10 @@ export default function GlobalFootprint() {
                   {origins.map((point) => (
                     <div
                       key={point.name}
-                      className="flex items-center gap-2 px-2 py-1 rounded hover:bg-gold/10 transition-all duration-200 cursor-default group"
+                      className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gold/20 transition-all duration-300 cursor-default group hover:scale-105 hover:shadow-lg hover:shadow-gold/20"
                     >
-                      <span className="text-gold text-xs group-hover:scale-125 transition-transform">●</span>
-                      <span className="text-cream/90 text-sm group-hover:text-cream">{point.name}</span>
+                      <span className="text-gold text-xs group-hover:scale-150 transition-all duration-300 group-hover:animate-pulse">●</span>
+                      <span className="text-cream/90 text-sm group-hover:text-cream group-hover:font-semibold transition-all duration-300">{point.name}</span>
                     </div>
                   ))}
                 </div>
@@ -153,10 +153,10 @@ export default function GlobalFootprint() {
                   {destinations.map((point) => (
                     <div
                       key={point.name}
-                      className="flex items-center gap-2 px-2 py-1 rounded hover:bg-teal/10 transition-all duration-200 cursor-default group"
+                      className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-teal/20 transition-all duration-300 cursor-default group hover:scale-105 hover:shadow-lg hover:shadow-teal/20"
                     >
-                      <span className="text-teal text-xs group-hover:scale-125 transition-transform">●</span>
-                      <span className="text-cream/90 text-sm group-hover:text-cream">{point.name}</span>
+                      <span className="text-teal text-xs group-hover:scale-150 transition-all duration-300 group-hover:animate-pulse">●</span>
+                      <span className="text-cream/90 text-sm group-hover:text-cream group-hover:font-semibold transition-all duration-300">{point.name}</span>
                     </div>
                   ))}
                 </div>

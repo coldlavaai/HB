@@ -82,10 +82,20 @@ export default function Skills() {
               transition={{ duration: 0.6, delay: catIndex * 0.1 }}
               className={`
                 bg-navy-light rounded-2xl p-8 border-2
-                ${category.color === 'gold' ? 'border-gold/30' : 'border-teal/30'}
+                ${category.color === 'gold' ? 'border-gold/30 hover:border-gold/60 hover:shadow-gold/20' : 'border-teal/30 hover:border-teal/60 hover:shadow-teal/20'}
+                hover:shadow-2xl hover:scale-[1.02] hover:-translate-y-1
+                transition-all duration-500 ease-out cursor-default
+                group relative overflow-hidden
               `}
             >
+              {/* Hover glow effect */}
+              <div className={`
+                absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500
+                ${category.color === 'gold' ? 'bg-gradient-to-br from-gold/10 via-transparent to-transparent' : 'bg-gradient-to-br from-teal/10 via-transparent to-transparent'}
+              `} />
+
               <h3 className={`
+                relative z-10
                 font-playfair text-2xl font-bold mb-6
                 ${category.color === 'gold' ? 'text-gold' : 'text-teal'}
               `}>
@@ -133,9 +143,12 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-navy-light rounded-xl p-5 border border-gold/20 hover:border-gold/50 transition-all duration-300 hover:shadow-xl hover:shadow-gold/10"
+              className="bg-navy-light rounded-xl p-5 border border-gold/20 hover:border-gold/60 transition-all duration-500 hover:shadow-2xl hover:shadow-gold/20 hover:scale-105 hover:-translate-y-2 cursor-default group relative overflow-hidden"
             >
-              <div className="text-3xl mb-3">{area.icon}</div>
+              {/* Hover glow */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-gold/10 via-transparent to-transparent" />
+
+              <div className="text-3xl mb-3 relative z-10 group-hover:scale-110 transition-transform duration-300">{area.icon}</div>
               <h4 className="font-playfair text-base font-bold text-cream mb-3">
                 {area.title}
               </h4>
