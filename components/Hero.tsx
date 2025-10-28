@@ -70,10 +70,10 @@ export default function Hero() {
           className="space-y-3"
         >
           <p className="font-inter text-xl md:text-2xl lg:text-3xl text-gold font-medium">
-            Partner — Liverpool Cotton Brokers
+            Partner, Liverpool Cotton Brokers
           </p>
           <p className="font-inter text-lg md:text-xl text-cream/80 mb-4">
-            Commodity Consultant — Earlam & Partners
+            Commodity Consultant, Earlam & Partners
           </p>
           <p className="font-inter text-base md:text-lg text-cream/60 max-w-3xl mx-auto italic">
             "Engineering-trained commodity specialist bringing 8 years of cotton trading expertise to agricultural commodities infrastructure - proven at building scalable trading operations from grain platforms into soft commodities"
@@ -113,7 +113,7 @@ export default function Hero() {
           className="mt-16"
         >
           <a
-            href="#journey"
+            href="#career-journey"
             className="group relative inline-block px-8 py-4 bg-gold text-navy font-semibold rounded-lg overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-gold/50"
           >
             <span className="relative z-10 flex items-center gap-2">

@@ -59,11 +59,14 @@ export default function GlobalFootprint() {
       globeEl.current.controls().autoRotate = true;
       globeEl.current.controls().autoRotateSpeed = 0.5;
 
-      // Disable zoom, keep rotation
+      // Completely disable zoom
       globeEl.current.controls().enableZoom = false;
+      globeEl.current.controls().enablePan = false;
       globeEl.current.controls().enableRotate = true;
+      globeEl.current.controls().minDistance = 200;
+      globeEl.current.controls().maxDistance = 200;
 
-      // Optional: limit vertical rotation to keep it natural
+      // Limit vertical rotation to keep it natural
       globeEl.current.controls().minPolarAngle = Math.PI / 3.5;
       globeEl.current.controls().maxPolarAngle = Math.PI - Math.PI / 3.5;
     }

@@ -49,7 +49,7 @@ export default function PDFVersion() {
         <header className="border-b-4 border-[#D4AF37] pb-6 mb-6">
           <h1 className="text-4xl font-bold text-[#1A2332] mb-2">Harry Bennett</h1>
           <div className="text-xl text-[#2C7A7B] font-semibold mb-3">
-            Partner — Liverpool Cotton Brokers | Commodity Consultant — Earlam & Partners
+            Partner, Liverpool Cotton Brokers | Commodity Consultant, Earlam & Partners
           </div>
           <div className="flex flex-wrap gap-4 text-sm text-gray-700">
             <div>📧 hwbconsultingltd@outlook.com</div>
@@ -110,7 +110,7 @@ export default function PDFVersion() {
                 <div className="text-[#2C7A7B] font-semibold">Liverpool Cotton Brokers Ltd (LCB)</div>
               </div>
               <div className="text-right text-sm">
-                <div className="font-semibold">January 2024 — Present</div>
+                <div className="font-semibold">January 2024 to Present</div>
                 <div className="text-gray-600">Hoylake (Global Coverage)</div>
               </div>
             </div>
@@ -133,7 +133,7 @@ export default function PDFVersion() {
                 <div className="text-[#2C7A7B] font-semibold">Earlam & Partners / EH&W Ltd</div>
               </div>
               <div className="text-right text-sm">
-                <div className="font-semibold">November 2017 — Present</div>
+                <div className="font-semibold">November 2017 to Present</div>
                 <div className="text-gray-600">Hoylake (Overseas & Remote)</div>
               </div>
             </div>
@@ -154,7 +154,7 @@ export default function PDFVersion() {
                 <div className="text-[#2C7A7B] font-semibold">Gate Capital Group</div>
               </div>
               <div className="text-right text-sm">
-                <div className="font-semibold">November 2017 — April 2020</div>
+                <div className="font-semibold">November 2017 to April 2020</div>
                 <div className="text-gray-600">London</div>
               </div>
             </div>
@@ -173,7 +173,7 @@ export default function PDFVersion() {
                 <div className="text-[#2C7A7B] font-semibold">ORB Global Wealth Management</div>
               </div>
               <div className="text-right text-sm">
-                <div className="font-semibold">August 2016 — December 2016</div>
+                <div className="font-semibold">August 2016 to December 2016</div>
                 <div className="text-gray-600">Hong Kong</div>
               </div>
             </div>
@@ -297,7 +297,7 @@ export default function PDFVersion() {
               </ul>
             </div>
             <div className="text-right text-sm font-semibold">
-              2011 — 2015
+              2011 to 2015
             </div>
           </div>
         </section>

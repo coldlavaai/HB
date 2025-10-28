@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function CareerTimeline() {
   const timeline = [
     {
-      period: 'January 2024 — Present',
+      period: 'January 2024 to Present',
       role: 'Partner',
       company: 'Liverpool Cotton Brokers Ltd (LCB)',
       location: 'Hoylake (Global Coverage)',
@@ -21,7 +21,7 @@ export default function CareerTimeline() {
       color: 'gold',
     },
     {
-      period: 'November 2017 — Present',
+      period: 'November 2017 to Present',
       role: 'Commodity Consultant',
       company: 'Earlam & Partners / EH&W Ltd',
       location: 'Hoylake (Overseas & Remote)',
@@ -36,7 +36,7 @@ export default function CareerTimeline() {
       color: 'teal',
     },
     {
-      period: 'November 2017 — April 2020',
+      period: 'November 2017 to April 2020',
       role: 'Consultant',
       company: 'Gate Capital Group',
       location: 'London',
@@ -48,7 +48,7 @@ export default function CareerTimeline() {
       color: 'gold',
     },
     {
-      period: 'August 2016 — December 2016',
+      period: 'August 2016 to December 2016',
       role: 'Business Development Manager',
       company: 'ORB Global Wealth Management',
       location: 'Hong Kong',
@@ -60,7 +60,7 @@ export default function CareerTimeline() {
       color: 'teal',
     },
     {
-      period: '2011 — 2015',
+      period: '2011 to 2015',
       role: 'BEng Civil Engineering (2:1)',
       company: 'Liverpool John Moores University',
       location: 'Liverpool, UK',
@@ -75,20 +75,20 @@ export default function CareerTimeline() {
   ];
 
   return (
-    <section className="bg-navy py-12 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section id="career-journey" className="bg-cream py-12 px-6">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
           className="text-center mb-10"
         >
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-cream mb-4">
-            Career Journey
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy mb-4">
+            The Journey
           </h2>
-          <p className="font-inter text-lg text-cream/70 max-w-3xl mx-auto">
-            From engineering foundations to engineering global supply chains
+          <p className="font-inter text-lg text-navy/70 max-w-4xl mx-auto leading-relaxed mb-8">
+            From engineering graduate to commodity trading partner: a deliberate progression through finance, derivatives, and global soft commodities,
+            culminating in partnership level responsibility for multi-million dollar cotton procurement operations
           </p>
         </motion.div>
 
