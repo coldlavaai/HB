@@ -84,13 +84,14 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="flex flex-col md:flex-row items-center justify-center gap-6"
         >
-          <button
-            onClick={() => window.print()}
+          <a
+            href="/pdf"
+            target="_blank"
             className="px-8 py-4 bg-navy hover:bg-navy-light text-gold border-2 border-gold font-semibold rounded-lg transition-all transform hover:scale-105 hover:shadow-xl flex items-center gap-3"
           >
             <span className="text-2xl">📄</span>
             <span>Download PDF Version</span>
-          </button>
+          </a>
 
           <a
             href="mailto:hwbconsultingltd@outlook.com?subject=Inquiry from Interactive CV"
