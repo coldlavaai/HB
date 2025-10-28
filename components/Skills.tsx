@@ -54,25 +54,25 @@ export default function Skills() {
   ];
 
   return (
-    <section className="min-h-screen bg-navy py-20 px-6">
+    <section className="bg-navy py-12 px-6">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-cream mb-6">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-cream mb-4">
             Skills & Expertise
           </h2>
-          <p className="font-inter text-xl text-cream/70 max-w-3xl mx-auto">
+          <p className="font-inter text-lg text-cream/70 max-w-3xl mx-auto">
             Comprehensive capabilities across the cotton trading value chain
           </p>
         </motion.div>
 
         {/* Skill Bars */}
-        <div className="grid md:grid-cols-2 gap-12 mb-20">
+        <div className="grid md:grid-cols-2 gap-8 mb-10">
           {skillCategories.map((category, catIndex) => (
             <motion.div
               key={category.title}

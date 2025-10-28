@@ -75,19 +75,19 @@ export default function CareerTimeline() {
   ];
 
   return (
-    <section className="min-h-screen bg-navy py-20 px-6">
+    <section className="bg-navy py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-10"
         >
-          <h2 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-cream mb-6">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-cream mb-4">
             Career Journey
           </h2>
-          <p className="font-inter text-xl text-cream/70 max-w-3xl mx-auto">
+          <p className="font-inter text-lg text-cream/70 max-w-3xl mx-auto">
             From engineering foundations to engineering global supply chains
           </p>
         </motion.div>
@@ -128,13 +128,14 @@ export default function CareerTimeline() {
                 `}>
                   {/* Logo */}
                   {item.logo && (
-                    <div className="mb-6 flex justify-start md:justify-end">
-                      <div className="w-32 h-12 relative bg-white rounded-lg p-2">
+                    <div className="mb-4 flex justify-start">
+                      <div className="w-32 h-12 relative bg-white rounded-lg p-2 overflow-hidden">
                         <Image
                           src={item.logo}
                           alt={item.company}
                           fill
                           className="object-contain"
+                          unoptimized
                         />
                       </div>
                     </div>

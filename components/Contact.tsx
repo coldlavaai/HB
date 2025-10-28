@@ -25,20 +25,20 @@ export default function Contact() {
   ];
 
   return (
-    <section className="min-h-screen bg-cream py-20 px-6 flex items-center">
+    <section className="bg-cream py-12 px-6">
       <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-6">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy mb-4">
             Let's Connect
           </h2>
-          <p className="font-inter text-xl text-navy/70 max-w-3xl mx-auto">
-            Open to discussing opportunities in commodity trading, strategic partnerships, and advisory roles
+          <p className="font-inter text-lg text-navy/70 max-w-3xl mx-auto">
+            Open to discussing opportunities in commodity trading, strategic partnerships, and senior commercial roles
           </p>
         </motion.div>
 

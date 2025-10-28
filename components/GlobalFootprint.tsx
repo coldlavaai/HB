@@ -62,19 +62,19 @@ export default function GlobalFootprint() {
   }, [mounted]);
 
   return (
-    <section id="global-footprint" className="min-h-screen bg-navy py-20 px-6">
+    <section id="global-footprint" className="bg-navy py-12 px-6">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-cream mb-6">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-cream mb-4">
             Global Footprint
           </h2>
-          <p className="font-inter text-xl text-cream/70 max-w-3xl mx-auto">
+          <p className="font-inter text-lg text-cream/70 max-w-3xl mx-auto">
             Multi-origin sourcing network connecting premium cotton growers with leading mills across Asia and Europe
           </p>
         </motion.div>
@@ -103,8 +103,8 @@ export default function GlobalFootprint() {
               arcDashAnimateTime={3000}
               arcStroke={0.5}
               arcsTransitionDuration={0}
-              height={600}
-              width={typeof window !== 'undefined' ? Math.min(window.innerWidth - 100, 1200) : 1200}
+              height={500}
+              width={typeof window !== 'undefined' ? Math.min(window.innerWidth - 100, 1000) : 1000}
             />
           )}
         </motion.div>
@@ -115,7 +115,7 @@ export default function GlobalFootprint() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-12 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+          className="mt-8 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto"
         >
           <div className="bg-navy-light/30 backdrop-blur-sm rounded-xl p-6 border border-gold/20">
             <h3 className="font-playfair text-2xl font-bold text-gold mb-4 flex items-center gap-3">

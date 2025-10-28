@@ -40,20 +40,20 @@ export default function SaihamCaseStudy() {
   ];
 
   return (
-    <section className="min-h-screen bg-cream py-20 px-6">
+    <section className="bg-cream py-12 px-6">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-6">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy mb-4">
             Flagship Partnership
           </h2>
-          <p className="font-inter text-xl text-navy/70 max-w-3xl mx-auto">
-            Saiham Group: A case study in comprehensive cotton procurement and advisory
+          <p className="font-inter text-lg text-navy/70 max-w-3xl mx-auto">
+            Saiham Group (Bangladesh): comprehensive cotton procurement, risk management, and strategic advisory - a case study in full-service commodity partnership
           </p>
         </motion.div>
 

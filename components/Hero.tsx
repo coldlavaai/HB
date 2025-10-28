@@ -69,8 +69,11 @@ export default function Hero() {
           <p className="font-inter text-xl md:text-2xl lg:text-3xl text-gold font-medium">
             Partner — Liverpool Cotton Brokers
           </p>
-          <p className="font-inter text-lg md:text-xl text-cream/80">
+          <p className="font-inter text-lg md:text-xl text-cream/80 mb-4">
             Commodity Consultant — Earlam & Partners
+          </p>
+          <p className="font-inter text-base md:text-lg text-cream/60 max-w-3xl mx-auto italic">
+            "Engineering-trained commodity specialist with 8 years building global cotton trading infrastructure across Asia, Europe, and the Americas"
           </p>
         </motion.div>
 
@@ -78,21 +81,25 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-12 flex flex-col md:flex-row items-center justify-center gap-6 text-cream/70 font-mono text-sm"
+          className="mt-10"
         >
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-gold rounded-full animate-pulse" />
-            <span>8 Years Experience</span>
-          </div>
-          <div className="hidden md:block w-px h-4 bg-cream/30" />
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-gold rounded-full animate-pulse" />
-            <span>10+ Countries</span>
-          </div>
-          <div className="hidden md:block w-px h-4 bg-cream/30" />
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-gold rounded-full animate-pulse" />
-            <span>20-35k MT Annual Procurement</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-6">
+            <div className="bg-navy-light/30 backdrop-blur-sm rounded-lg p-4 border border-gold/20">
+              <div className="font-mono text-2xl font-bold text-gold">$50M</div>
+              <div className="text-cream/70 text-xs mt-1">Annual Procurement Value</div>
+            </div>
+            <div className="bg-navy-light/30 backdrop-blur-sm rounded-lg p-4 border border-gold/20">
+              <div className="font-mono text-2xl font-bold text-gold">30k MT</div>
+              <div className="text-cream/70 text-xs mt-1">Average Annual Volume</div>
+            </div>
+            <div className="bg-navy-light/30 backdrop-blur-sm rounded-lg p-4 border border-gold/20">
+              <div className="font-mono text-2xl font-bold text-gold">10+</div>
+              <div className="text-cream/70 text-xs mt-1">Countries Covered</div>
+            </div>
+            <div className="bg-navy-light/30 backdrop-blur-sm rounded-lg p-4 border border-gold/20">
+              <div className="font-mono text-2xl font-bold text-gold">2024</div>
+              <div className="text-cream/70 text-xs mt-1">LCB Partnership</div>
+            </div>
           </div>
         </motion.div>
 

@@ -69,24 +69,24 @@ export default function ByTheNumbers() {
   ];
 
   return (
-    <section className="min-h-screen bg-cream py-20 px-6 flex items-center">
+    <section className="bg-cream py-12 px-6">
       <div className="max-w-7xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
-          <h2 className="font-playfair text-5xl md:text-6xl lg:text-7xl font-bold text-navy mb-6">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy mb-4">
             By The Numbers
           </h2>
-          <p className="font-inter text-xl text-navy/70 max-w-3xl mx-auto">
+          <p className="font-inter text-lg text-navy/70 max-w-3xl mx-auto">
             Quantifying impact across global cotton markets
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -95,7 +95,7 @@ export default function ByTheNumbers() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className={`
-                relative bg-navy rounded-2xl p-8 border-2
+                relative bg-navy rounded-2xl p-6 border-2
                 ${stat.color === 'gold' ? 'border-gold' : 'border-teal'}
                 hover:shadow-2xl hover:scale-105 transition-all duration-300
                 overflow-hidden group
