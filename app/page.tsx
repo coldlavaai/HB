@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero';
+import Journey from '@/components/Journey';
 import CareerTimeline from '@/components/CareerTimeline';
 import GlobalFootprint from '@/components/GlobalFootprint';
 import ByTheNumbers from '@/components/ByTheNumbers';
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <main className="overflow-x-hidden">
       <Hero />
+      <Journey />
       <CareerTimeline />
       <GlobalFootprint />
       <SaihamCaseStudy />

@@ -84,11 +84,10 @@ export default function CareerTimeline() {
           className="text-center mb-10"
         >
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-navy mb-4">
-            The Journey
+            Career Timeline
           </h2>
           <p className="font-inter text-lg text-navy/70 max-w-4xl mx-auto leading-relaxed mb-8">
-            From engineering graduate to commodity trading partner: a deliberate progression through finance, derivatives, and global soft commodities,
-            culminating in partnership level responsibility for multi-million dollar cotton procurement operations
+            Detailed professional history with key achievements and responsibilities across each role
           </p>
         </motion.div>
 
