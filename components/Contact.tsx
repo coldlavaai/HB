@@ -27,7 +27,6 @@ export default function Contact() {
       icon: '📍',
       label: 'Location',
       value: 'Heswall, UK',
-      subvalue: 'Extensive Overseas Engagement',
     },
   ];
 
@@ -70,16 +69,13 @@ export default function Contact() {
                     {info.icon}
                   </div>
                   <div className="text-gold font-semibold mb-2 relative z-10">{info.label}</div>
-                  <div className="text-cream font-mono text-sm relative z-10 group-hover:text-cream/100 transition-colors duration-300">{info.value}</div>
+                  <div className="text-cream font-mono text-xs break-all relative z-10 group-hover:text-cream/100 transition-colors duration-300">{info.value}</div>
                 </a>
               ) : (
                 <div className="bg-navy rounded-2xl p-8 border-2 border-gold/50 text-center relative overflow-hidden">
                   <div className="text-5xl mb-4">{info.icon}</div>
                   <div className="text-gold font-semibold mb-2">{info.label}</div>
-                  <div className="text-cream font-mono text-sm">{info.value}</div>
-                  {info.subvalue && (
-                    <div className="text-cream/60 text-xs mt-2">{info.subvalue}</div>
-                  )}
+                  <div className="text-cream font-mono text-xs break-all">{info.value}</div>
                 </div>
               )}
             </motion.div>

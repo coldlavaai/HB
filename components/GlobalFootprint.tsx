@@ -57,15 +57,15 @@ export default function GlobalFootprint() {
     if (globeEl.current && mounted) {
       const controls = globeEl.current.controls();
 
-      // Enable ONLY auto-rotation
+      // Enable ONLY auto-rotation at slower speed
       controls.autoRotate = true;
-      controls.autoRotateSpeed = 0.5;
+      controls.autoRotateSpeed = 0.3; // Reduced from 0.5 for smoother performance
 
       // DISABLE ALL USER INTERACTIONS COMPLETELY
       controls.enableZoom = false;
       controls.enablePan = false;
-      controls.enableRotate = false; // NO manual rotation
-      controls.enabled = false; // Disable all controls
+      controls.enableRotate = false;
+      controls.enabled = false;
 
       // Lock camera distance
       controls.minDistance = 250;

@@ -12,11 +12,34 @@
 
   body {
     @apply bg-cream text-navy;
+    /* Performance optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   /* Smooth transitions for all interactive elements */
   a, button {
     @apply transition-all duration-300;
+  }
+
+  /* Hardware acceleration for animations */
+  * {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  /* Optimize scrolling performance */
+  section {
+    will-change: auto;
+  }
+
+  /* Prevent layout shifts */
+  img, video {
+    max-width: 100%;
+    height: auto;
   }
 }
 
