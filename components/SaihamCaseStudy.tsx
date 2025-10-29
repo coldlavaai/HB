@@ -63,14 +63,14 @@ export default function SaihamCaseStudy() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="flex justify-center gap-2 sm:gap-4 mb-8 sm:mb-12"
+          className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-4"
         >
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`
-                px-4 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300
+                flex-shrink-0 px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300
                 ${activeTab === tab.id
                   ? 'bg-navy text-gold shadow-xl scale-105'
                   : 'bg-navy-light/20 text-navy hover:bg-navy-light/40'

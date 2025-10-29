@@ -1,6 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import BackgroundAnimation from "@/components/BackgroundAnimation";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   title: "Harry Bennett | Cotton Trading Specialist",

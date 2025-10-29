@@ -94,7 +94,7 @@ export default function BusinessVision() {
                     <span className="text-2xl">{flow.icon}</span>
                     <span className="font-semibold text-cream">{flow.label}</span>
                   </div>
-                  <p className="text-cream/70 text-sm pl-11">
+                  <p className="text-cream/70 text-sm pl-11 leading-relaxed break-words">
                     {flow.locations || flow.details}
                   </p>
                 </div>

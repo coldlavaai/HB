@@ -148,17 +148,18 @@ export default function Skills() {
               </h3>
 
               {/* Skills as tags */}
-              <div className="relative z-10 flex flex-wrap gap-2">
+              <div className="relative z-10 flex flex-wrap gap-2 sm:gap-2.5">
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
                     className={`
-                      px-3 py-1.5 rounded-lg text-xs font-medium
+                      px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium leading-tight
                       ${category.color === 'gold'
                         ? 'bg-gold/10 text-gold border border-gold/30'
                         : 'bg-teal/10 text-teal border border-teal/30'}
                       transition-all duration-300
                       hover:scale-105 hover:shadow-lg
+                      break-words max-w-full
                     `}
                   >
                     {skill}
