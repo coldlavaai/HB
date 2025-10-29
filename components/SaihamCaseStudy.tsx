@@ -53,7 +53,7 @@ export default function SaihamCaseStudy() {
             Flagship Partnership
           </h2>
           <p className="font-inter text-lg text-navy/70 max-w-3xl mx-auto">
-            Saiham Group (Bangladesh): comprehensive cotton procurement, risk management, and strategic advisory - a case study in full-service commodity partnership
+            Saiham Group (Bangladesh): comprehensive cotton procurement, risk management, and strategic advisory - a case study in full service commodity partnership
           </p>
         </motion.div>
 
@@ -99,9 +99,9 @@ export default function SaihamCaseStudy() {
                   </h3>
                   <p className="text-cream/80 text-lg mb-6 leading-relaxed">
                     One of Bangladesh's leading textile manufacturers, operating significant spinning and
-                    contract-spinning capacity for Gildan and requiring integrated cotton procurement, pricing,
-                    and execution oversight. This is Harry's largest single-client partnership and a core
-                    demonstration of full-spectrum commodity advisory capability.
+                    contract spinning capacity for Gildan and requiring integrated cotton procurement, pricing,
+                    and execution oversight. This is Harry's largest single client partnership and a core
+                    demonstration of full spectrum commodity advisory capability.
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
@@ -226,7 +226,7 @@ export default function SaihamCaseStudy() {
                     Strategic Hedge Management
                   </h4>
                   <p>
-                    Daily positioning strategy and on-call fixation management protecting against market
+                    Daily positioning strategy and on call fixation management protecting against market
                     volatility while optimizing procurement costs
                   </p>
                 </div>

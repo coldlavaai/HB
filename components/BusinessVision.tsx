@@ -21,8 +21,8 @@ export default function BusinessVision() {
 
   const scalePlan = [
     { phase: 'Pilot', volume: '500-1,000 MT', focus: 'Proof of concept + execution reliability' },
-    { phase: 'Year 1', volume: '5,000-10,000 MT', focus: 'Scale with top-tier origins and clients' },
-    { phase: 'Year 2-3', volume: 'Structured Contracts', focus: '5-10 core mills, long-term partnerships' },
+    { phase: 'Year 1', volume: '5,000-10,000 MT', focus: 'Scale with top tier origins and clients' },
+    { phase: 'Year 2-3', volume: 'Structured Contracts', focus: '5-10 core mills, long term partnerships' },
   ];
 
   return (
@@ -39,7 +39,7 @@ export default function BusinessVision() {
             Business Vision
           </h2>
           <p className="font-inter text-lg text-cream/70 max-w-4xl mx-auto mb-3">
-            Building a cotton trading desk that leverages existing grain trading infrastructure and the LCB commercial network to scale high-integrity, relationship-driven physical cotton flows.
+            Building a cotton trading desk that leverages existing grain trading infrastructure and the LCB commercial network to scale high integrity, relationship driven physical cotton flows.
           </p>
           <p className="font-inter text-base text-gold/90 max-w-4xl mx-auto italic">
             "Cotton supply chains operate with the same commercial mechanics as grain, hedging, freight, contract structures, and risk management making cotton a natural extension to existing agricultural trading platforms"
@@ -164,7 +164,7 @@ export default function BusinessVision() {
 
           <div className="mt-6 text-center">
             <p className="text-cream/60 text-sm italic">
-              Start with top-tier, low-friction origination & mills already known/tested
+              Start with top tier, low friction origination & mills already known/tested
             </p>
           </div>
         </motion.div>

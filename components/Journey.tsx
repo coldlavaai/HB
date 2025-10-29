@@ -25,7 +25,7 @@ export default function Journey() {
       year: '2017-2020',
       title: 'Derivatives & Investment',
       location: 'Gate Capital Group, London',
-      description: 'Consultant in specialist investment firm. Structured options-based strategies, managed portfolio exposure, mastered Bloomberg terminal, developed understanding of derivatives markets.',
+      description: 'Consultant in specialist investment firm. Structured options based strategies, managed portfolio exposure, mastered Bloomberg terminal, developed understanding of derivatives markets.',
       icon: '📊',
       color: 'gold',
     },
@@ -33,7 +33,7 @@ export default function Journey() {
       year: '2017-Present',
       title: 'Cotton Trading Specialist',
       location: 'Earlam & Partners',
-      description: 'Built agency sales network across Bangladesh, Pakistan, Vietnam, Portugal. Managed multi-origin logistics (US, Brazil, Australia, Greece). Designed proprietary execution systems. Produced market analysis blending fundamentals and technicals.',
+      description: 'Built agency sales network across Bangladesh, Pakistan, Vietnam, Portugal. Managed multi origin logistics (US, Brazil, Australia, Greece). Designed proprietary execution systems. Produced market analysis blending fundamentals and technicals.',
       icon: '🌾',
       logo: '/logos/eap-logo.png',
       color: 'teal',
@@ -153,14 +153,14 @@ export default function Journey() {
             <div>
               <h4 className="font-playfair text-xl font-bold text-teal mb-3">Proven Track Record</h4>
               <p className="text-sm leading-relaxed text-cream/80">
-                Built from ground-up: agency networks, proprietary systems, multi-million dollar client relationships, partner-level credibility.
+                Built from ground up: agency networks, proprietary systems, multimillion dollar client relationships, partner level credibility.
                 Every step earned through results.
               </p>
             </div>
             <div>
               <h4 className="font-playfair text-xl font-bold text-gold mb-3">Future-Focused</h4>
               <p className="text-sm leading-relaxed text-cream/80">
-                Driving sustainability integration and organic developments, building scalable trading infrastructure, positioning for next-generation commodity flows. Not just trading - building systems.
+                Driving sustainability integration and organic developments, building scalable trading infrastructure, positioning for next generation commodity flows. Not just trading - building systems.
               </p>
             </div>
           </div>

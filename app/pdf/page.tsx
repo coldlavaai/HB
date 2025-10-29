@@ -53,7 +53,7 @@ export default function PDFVersion() {
           </div>
           <div className="flex flex-wrap gap-4 text-sm text-gray-700">
             <div>📧 hwbconsultingltd@outlook.com</div>
-            <div>📱 +44 7380 949 6591</div>
+            <div>📱 +44 7380 946 591</div>
             <div>📍 Heswall, UK (Extensive Overseas Engagement)</div>
           </div>
         </header>
@@ -68,8 +68,8 @@ export default function PDFVersion() {
             mill/merchant relationship management, and execution. Partner in Liverpool Cotton Brokers (LCB), jointly managing market
             intelligence, origination trade mapping, direct mill relationships, and strategic advisory functions. Core responsibility
             includes ongoing procurement, hedge/position management, and supply chain advisory for Saiham Group (Bangladesh), covering
-            20–35k MT p.a., including contracting, shipment execution, quality flow, and structured market/trade guidance. Maintains
-            multi-origin sourcing network (US, Brazil, Australia, Greece, West Africa) working with mills and merchants to structure
+            25–40k MT p.a., including contracting, shipment execution, quality flow, and structured market/trade guidance. Maintains
+            multi origin sourcing network (US, Brazil, Australia, India, Greece, Spain, Tanzania, Uzbekistan, South Africa, Tajikistan, Mexico, Mozambique, West Africa, Azerbaijan) working with mills and merchants to structure
             supply channels aligning commercial, sustainability, and trade objectives.
           </p>
         </section>
@@ -78,15 +78,15 @@ export default function PDFVersion() {
         <section className="mb-6">
           <div className="grid grid-cols-4 gap-4">
             <div className="bg-gray-50 p-3 rounded border border-gray-200">
-              <div className="text-2xl font-bold text-[#D4AF37]">$50M</div>
+              <div className="text-2xl font-bold text-[#D4AF37]">$60M</div>
               <div className="text-xs text-gray-600">Annual Value</div>
             </div>
             <div className="bg-gray-50 p-3 rounded border border-gray-200">
-              <div className="text-2xl font-bold text-[#D4AF37]">30k MT</div>
+              <div className="text-2xl font-bold text-[#D4AF37]">35k MT</div>
               <div className="text-xs text-gray-600">Annual Volume</div>
             </div>
             <div className="bg-gray-50 p-3 rounded border border-gray-200">
-              <div className="text-2xl font-bold text-[#D4AF37]">10+</div>
+              <div className="text-2xl font-bold text-[#D4AF37]">14+</div>
               <div className="text-xs text-gray-600">Countries</div>
             </div>
             <div className="bg-gray-50 p-3 rounded border border-gray-200">
@@ -117,10 +117,10 @@ export default function PDFVersion() {
             <ul className="list-disc list-inside text-sm space-y-1 text-gray-800 ml-2">
               <li>Co-owner managing market intelligence, origination, and direct sales strategy</li>
               <li>Lead strategic advisory for futures, options, and hedge strategy for mill clients and merchant partners</li>
-              <li>Responsible for 20-35k MT annual procurement program with Saiham Group (Bangladesh) - $30-50M value</li>
+              <li>Responsible for 25-40k MT annual procurement program with Saiham Group (Bangladesh) - $50-70M value</li>
               <li>Developing structured supply chains from Brazil, Australia, Greece to Asia & Europe</li>
               <li>Drive traceability and sustainability alignment (FiberTrace, TextileGenesis)</li>
-              <li>Daily management of hedge/positioning strategy, on-call fixations, market advisory</li>
+              <li>Daily management of hedge/positioning strategy, on call fixations, market advisory</li>
               <li>Oversee shipment timelines, LC handling, logistics, execution pipeline</li>
             </ul>
           </div>
@@ -159,7 +159,7 @@ export default function PDFVersion() {
               </div>
             </div>
             <ul className="list-disc list-inside text-sm space-y-1 text-gray-800 ml-2">
-              <li>Worked within specialist investment firm structuring options-based investment and hedge strategies</li>
+              <li>Worked within specialist investment firm structuring options based investment and hedge strategies</li>
               <li>Gained practical experience in derivatives, portfolio exposure management, P/L reporting</li>
               <li>Bloomberg-led research and analysis</li>
             </ul>
@@ -193,7 +193,7 @@ export default function PDFVersion() {
           </h2>
           <p className="text-sm text-gray-800 mb-4 italic">
             Building a Cotton Trading Desk leveraging existing grain trading infrastructure and LCB's commercial network
-            to create scalable, high-integrity physical cotton flows. Cotton trade flows mirror grain trading behaviours
+            to create scalable, high integrity physical cotton flows. Cotton trade flows mirror grain trading behaviours
             (hedging, freight, contract structures) - enabling seamless integration into established agricultural commodity operations.
           </p>
 
@@ -201,7 +201,7 @@ export default function PDFVersion() {
             <div>
               <h4 className="font-bold text-sm text-[#1A2332] mb-2">Trading Flow</h4>
               <ul className="text-xs space-y-1 text-gray-700">
-                <li>• <strong>Procurement:</strong> Brazil, US, Greece, Spain, West Africa, Turkey, Australia</li>
+                <li>• <strong>Procurement:</strong> United States, Brazil, Australia, India, Greece, Spain, Tanzania, Uzbekistan, Tajikistan, Mexico, Mozambique, Azerbaijan, South Africa</li>
                 <li>• <strong>Sales:</strong> Bangladesh, Pakistan, Vietnam, Turkey, India</li>
                 <li>• <strong>Trade Basis:</strong> FOB/FCA purchase → CFR/CIF sale</li>
                 <li>• <strong>Pilot:</strong> 500-1,000 MT</li>
@@ -259,11 +259,20 @@ export default function PDFVersion() {
           <div className="mt-4">
             <h4 className="font-bold text-sm text-[#1A2332] mb-2">Geographic Coverage</h4>
             <div className="grid grid-cols-5 gap-2 text-xs text-gray-700">
-              <div>• US</div>
+              <div>• United States</div>
               <div>• Brazil</div>
               <div>• Australia</div>
+              <div>• India</div>
               <div>• Greece</div>
+              <div>• Spain</div>
+              <div>• Tanzania</div>
+              <div>• Uzbekistan</div>
+              <div>• South Africa</div>
+              <div>• Tajikistan</div>
+              <div>• Mexico</div>
+              <div>• Mozambique</div>
               <div>• West Africa</div>
+              <div>• Azerbaijan</div>
               <div>• Bangladesh</div>
               <div>• Pakistan</div>
               <div>• Vietnam</div>
