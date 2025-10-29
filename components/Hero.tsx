@@ -76,7 +76,7 @@ export default function Hero() {
             Commodity Consultant, Earlam & Partners
           </p>
           <p className="font-inter text-base md:text-lg text-cream/60 max-w-3xl mx-auto italic">
-            "Engineering-trained commodity specialist bringing 8 years of cotton trading expertise to agricultural commodities infrastructure - proven at building scalable trading operations from grain platforms into soft commodities"
+            "Engineering-trained commodity specialist with eight years focused in cotton and soft commodities. Experienced in building and scaling physical trading and procurement operations, with a track record in origin–destination flow development, mill relationship management, and market strategy across South Asia, Turkey, and Europe."
           </p>
         </motion.div>
 
@@ -88,15 +88,15 @@ export default function Hero() {
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-6">
             <div className="bg-navy-light/30 backdrop-blur-sm rounded-lg p-4 border border-gold/20">
-              <div className="font-mono text-2xl font-bold text-gold">$50M</div>
+              <div className="font-mono text-2xl font-bold text-gold">$60M</div>
               <div className="text-cream/70 text-xs mt-1">Annual Procurement Value</div>
             </div>
             <div className="bg-navy-light/30 backdrop-blur-sm rounded-lg p-4 border border-gold/20">
-              <div className="font-mono text-2xl font-bold text-gold">30k MT</div>
+              <div className="font-mono text-2xl font-bold text-gold">35k MT</div>
               <div className="text-cream/70 text-xs mt-1">Average Annual Volume</div>
             </div>
             <div className="bg-navy-light/30 backdrop-blur-sm rounded-lg p-4 border border-gold/20">
-              <div className="font-mono text-2xl font-bold text-gold">10+</div>
+              <div className="font-mono text-2xl font-bold text-gold">14+</div>
               <div className="text-cream/70 text-xs mt-1">Countries Covered</div>
             </div>
             <div className="bg-navy-light/30 backdrop-blur-sm rounded-lg p-4 border border-gold/20">

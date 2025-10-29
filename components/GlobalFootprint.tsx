@@ -27,8 +27,17 @@ export default function GlobalFootprint() {
     { lat: 37.0902, lng: -95.7129, name: 'United States', color: '#D4AF37', size: 0.8 },
     { lat: -14.2350, lng: -51.9253, name: 'Brazil', color: '#D4AF37', size: 0.8 },
     { lat: -25.2744, lng: 133.7751, name: 'Australia', color: '#D4AF37', size: 0.7 },
+    { lat: 20.5937, lng: 78.9629, name: 'India', color: '#D4AF37', size: 0.8 },
     { lat: 39.0742, lng: 21.8243, name: 'Greece', color: '#D4AF37', size: 0.5 },
+    { lat: 40.4637, lng: -3.7492, name: 'Spain', color: '#D4AF37', size: 0.5 },
+    { lat: -6.3690, lng: 34.8888, name: 'Tanzania', color: '#D4AF37', size: 0.6 },
+    { lat: 41.3775, lng: 64.5853, name: 'Uzbekistan', color: '#D4AF37', size: 0.6 },
+    { lat: -30.5595, lng: 22.9375, name: 'South Africa', color: '#D4AF37', size: 0.6 },
+    { lat: 38.8610, lng: 71.2761, name: 'Tajikistan', color: '#D4AF37', size: 0.5 },
+    { lat: 23.6345, lng: -102.5528, name: 'Mexico', color: '#D4AF37', size: 0.6 },
+    { lat: -18.6657, lng: 35.5296, name: 'Mozambique', color: '#D4AF37', size: 0.5 },
     { lat: 9.9456, lng: -9.6966, name: 'West Africa', color: '#D4AF37', size: 0.6 },
+    { lat: 40.1431, lng: 47.5769, name: 'Azerbaijan', color: '#D4AF37', size: 0.5 },
   ];
 
   // Destination points (mills/customers)
@@ -38,6 +47,7 @@ export default function GlobalFootprint() {
     { lat: 14.0583, lng: 108.2772, name: 'Vietnam', color: '#2C7A7B', size: 0.8 },
     { lat: 39.3999, lng: 35.5018, name: 'Turkey', color: '#2C7A7B', size: 0.8 },
     { lat: 39.3999, lng: -8.2245, name: 'Portugal', color: '#2C7A7B', size: 0.6 },
+    { lat: 20.5937, lng: 78.9629, name: 'India', color: '#2C7A7B', size: 0.9 },
   ];
 
   const allPoints = [...origins, ...destinations];
@@ -91,7 +101,7 @@ export default function GlobalFootprint() {
             Global Footprint
           </h2>
           <p className="font-inter text-lg text-cream/70 max-w-3xl mx-auto">
-            Multi-origin sourcing network connecting premium cotton growers with leading mills across Asia and Europe
+            Multi-origin sourcing network connecting suppliers with leading mills across Asia and Europe
           </p>
         </motion.div>
 
@@ -182,11 +192,11 @@ export default function GlobalFootprint() {
               <div className="bg-gradient-to-r from-gold/10 to-teal/10 rounded-xl p-3 border border-gold/20">
                 <div className="grid grid-cols-2 gap-3 text-center">
                   <div>
-                    <div className="font-mono text-xl font-bold text-gold">5</div>
+                    <div className="font-mono text-xl font-bold text-gold">14</div>
                     <div className="text-cream/70 text-xs">Origin Countries</div>
                   </div>
                   <div>
-                    <div className="font-mono text-xl font-bold text-teal">5</div>
+                    <div className="font-mono text-xl font-bold text-teal">6+</div>
                     <div className="text-cream/70 text-xs">Destination Markets</div>
                   </div>
                 </div>

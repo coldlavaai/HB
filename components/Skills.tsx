@@ -15,6 +15,7 @@ export default function Skills() {
         'Price Discovery',
         'Merchant Relations',
         'Producer Networks',
+        'Direct sourcing',
       ],
     },
     {
@@ -23,11 +24,12 @@ export default function Skills() {
       color: 'teal',
       skills: [
         'Futures & Options',
-        'Hedge Strategy',
+        'Hedging',
         'Position Management',
         'Market Analysis',
         'On-Call Fixations',
         'Portfolio Optimization',
+        'Technical Analysis',
       ],
     },
     {
@@ -53,7 +55,7 @@ export default function Skills() {
         'Strategic Planning',
         'Sustainability Integration',
         'Executive Consultation',
-        'Risk Assessment',
+        'Deep Dive SnD',
       ],
     },
     {
@@ -62,11 +64,14 @@ export default function Skills() {
       color: 'gold',
       skills: [
         'Fundamentals Analysis',
-        'Technical Analysis',
+        'Technical Analysis & Charting',
         'Macro Positioning',
-        'Supply/Demand Modeling',
+        'Deep Dive SnD',
         'Bloomberg Terminal',
         'ICE Futures',
+        'Macroeconomic Reports',
+        'CFTC Commitment of trader / money flow analysis',
+        'Historical statistical and seasonal data',
       ],
     },
     {

@@ -14,14 +14,14 @@ export default function Contact() {
     {
       icon: '📱',
       label: 'Mobile',
-      value: '+44 7380 949 6591',
-      href: 'tel:+447380949659',
+      value: '+44 7380 946 591',
+      href: 'tel:+447380946591',
     },
     {
       icon: '💬',
       label: 'WhatsApp',
       value: 'Chat Now',
-      href: 'https://wa.me/447380949659',
+      href: 'https://wa.me/447380946591',
     },
     {
       icon: '📍',

@@ -45,21 +45,21 @@ export default function ByTheNumbers() {
       color: 'gold',
     },
     {
-      value: 30000,
+      value: 35000,
       label: 'Metric Tons',
       sublabel: 'Annual procurement (avg)',
       suffix: '+',
       color: 'teal',
     },
     {
-      value: 10,
+      value: 14,
       label: 'Countries',
       sublabel: 'Active trading markets',
       suffix: '+',
       color: 'gold',
     },
     {
-      value: 50,
+      value: 60,
       prefix: '$',
       suffix: 'M',
       label: 'Annual Value',
@@ -158,7 +158,7 @@ export default function ByTheNumbers() {
                 Multi-Origin
               </div>
               <p className="text-cream/70">
-                US, Brazil, Australia, Greece, West Africa sourcing network
+                US, Brazil, Australia, India, Turkey, Greece, East/West Africa sourcing network
               </p>
             </div>
             <div>

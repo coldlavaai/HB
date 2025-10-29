@@ -7,7 +7,7 @@ export default function BusinessVision() {
   const [activeModel, setActiveModel] = useState<number>(0);
 
   const tradingFlow = [
-    { label: 'Procurement', locations: 'Brazil, US, Greece, Spain, West Africa, Turkey, Australia', icon: '📦' },
+    { label: 'Procurement', locations: 'United States, Brazil, Australia, India, Greece, Spain, Tanzania, Uzbekistan, Tajikistan, Mexico, Mozambique, Azerbaijan, South Africa', icon: '📦' },
     { label: 'Sales', locations: 'Bangladesh, Pakistan, Vietnam, Turkey, India', icon: '🎯' },
     { label: 'Trade Basis', details: 'FOB/FCA purchase → CFR/CIF sale', icon: '📋' },
   ];
@@ -39,10 +39,10 @@ export default function BusinessVision() {
             Business Vision
           </h2>
           <p className="font-inter text-lg text-cream/70 max-w-4xl mx-auto mb-3">
-            Building a Cotton Trading Desk leveraging existing grain trading infrastructure and LCB's commercial network to create scalable, high-integrity physical cotton flows
+            Building a cotton trading desk that leverages existing grain trading infrastructure and the LCB commercial network to scale high-integrity, relationship-driven physical cotton flows.
           </p>
           <p className="font-inter text-base text-gold/90 max-w-4xl mx-auto italic">
-            "Cotton trade flows mirror grain trading behaviours (hedging, freight, contract structures) - enabling seamless integration into established agricultural commodity operations"
+            "Cotton supply chains operate with the same commercial mechanics as grain, hedging, freight, contract structures, and risk management making cotton a natural extension to existing agricultural trading platforms"
           </p>
         </motion.div>
 
@@ -61,7 +61,7 @@ export default function BusinessVision() {
               { icon: '📈', text: 'Natural diversification from grain → softs and fibres' },
               { icon: '🏗️', text: 'Leverages existing trade finance, shipping desks & logistics infrastructure' },
               { icon: '🌐', text: 'Immediate market access via proven LCB origination & sales network' },
-              { icon: '♻️', text: 'Growing demand for traceability (FiberTrace/TextileGenesis) mirrors grain sector trends' },
+              { icon: '♻️', text: 'Growing demand for traceability mirrors grain sector trends' },
             ].map((item, i) => (
               <motion.div
                 key={i}

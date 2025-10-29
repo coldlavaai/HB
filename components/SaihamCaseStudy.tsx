@@ -98,10 +98,10 @@ export default function SaihamCaseStudy() {
                     About Saiham Group
                   </h3>
                   <p className="text-cream/80 text-lg mb-6 leading-relaxed">
-                    Leading textile manufacturer in Bangladesh with significant spinning capacity and
-                    comprehensive cotton procurement requirements. Partnership represents Harry's
-                    largest single-client relationship and demonstrates full-service commodity advisory
-                    capabilities.
+                    One of Bangladesh's leading textile manufacturers, operating significant spinning and
+                    contract-spinning capacity for Gildan and requiring integrated cotton procurement, pricing,
+                    and execution oversight. This is Harry's largest single-client partnership and a core
+                    demonstration of full-spectrum commodity advisory capability.
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
@@ -122,7 +122,7 @@ export default function SaihamCaseStudy() {
                       <span className="text-gold text-2xl">🤝</span>
                       <div>
                         <div className="text-cream font-semibold">Partnership Duration</div>
-                        <div className="text-cream/70">Ongoing since 2024</div>
+                        <div className="text-cream/70">Ongoing since 2018</div>
                       </div>
                     </div>
                   </div>
@@ -135,13 +135,13 @@ export default function SaihamCaseStudy() {
                   <div className="bg-navy-light rounded-xl p-4 sm:p-6 md:p-8 border border-gold/20">
                     <div className="text-center mb-4 md:mb-6">
                       <div className="font-mono text-4xl sm:text-5xl md:text-6xl font-bold text-gold mb-2">
-                        20-35k
+                        25-40k
                       </div>
                       <div className="text-cream text-base sm:text-lg md:text-xl">Metric Tons Per Annum</div>
                     </div>
                     <div className="text-center text-cream/70">
                       <div className="mb-3 md:mb-4">Equivalent to:</div>
-                      <div className="font-mono text-2xl sm:text-3xl text-teal mb-2">$30-50M</div>
+                      <div className="font-mono text-2xl sm:text-3xl text-teal mb-2">$50-70M</div>
                       <div className="text-xs sm:text-sm">Annual contract value</div>
                     </div>
                   </div>

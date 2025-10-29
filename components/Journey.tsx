@@ -25,7 +25,7 @@ export default function Journey() {
       year: '2017-2020',
       title: 'Derivatives & Investment',
       location: 'Gate Capital Group, London',
-      description: 'Consultant in specialist investment firm. Structured options-based strategies, managed portfolio exposure, mastered Bloomberg terminal, developed deep understanding of derivatives markets.',
+      description: 'Consultant in specialist investment firm. Structured options-based strategies, managed portfolio exposure, mastered Bloomberg terminal, developed understanding of derivatives markets.',
       icon: '📊',
       color: 'gold',
     },
@@ -42,7 +42,7 @@ export default function Journey() {
       year: '2024-Present',
       title: 'Partnership & Leadership',
       location: 'Liverpool Cotton Brokers',
-      description: 'Co-owner and Partner. Managing $30-50M annual procurement programs. Leading strategic advisory for mills and merchants. Building sustainability infrastructure (FiberTrace, TextileGenesis). Scaling global operations.',
+      description: 'Co-owner and Partner. Managing $40-60M annual procurement programs. Develop strategic advisory for mills and merchants, fixation strategies. Drive traceability and sustainability alignment, lead destination sales of organic cotton. Scaling global operations.',
       icon: '⚡',
       logo: '/logos/lcb-logo.png',
       color: 'gold',
@@ -62,8 +62,7 @@ export default function Journey() {
             The Journey
           </h2>
           <p className="font-inter text-lg text-navy/70 max-w-4xl mx-auto leading-relaxed">
-            From engineering graduate to commodity trading partner: a deliberate progression through finance, derivatives, and global soft commodities,
-            culminating in partnership-level responsibility for multi-million dollar cotton procurement operations
+            From engineering graduate to commodity consulting partner: a deliberate progression through finance, derivatives, and global soft commodities, culminating in partnership-level responsibility for scaled cotton procurement operations
           </p>
         </motion.div>
 
@@ -148,8 +147,7 @@ export default function Journey() {
             <div>
               <h4 className="font-playfair text-xl font-bold text-gold mb-3">Unique Combination</h4>
               <p className="text-sm leading-relaxed text-cream/80">
-                Engineering analytical rigour + Asian financial markets exposure + London derivatives expertise + 8 years physical commodity execution =
-                comprehensive commercial operator
+                Combining engineering-level analytical discipline, Asian financial markets experience, derivatives exposure, and eight years of hands-on physical commodity execution to deliver a complete commercial trading skillset.
               </p>
             </div>
             <div>
@@ -162,7 +160,7 @@ export default function Journey() {
             <div>
               <h4 className="font-playfair text-xl font-bold text-gold mb-3">Future-Focused</h4>
               <p className="text-sm leading-relaxed text-cream/80">
-                Driving sustainability integration (FiberTrace, TextileGenesis), building scalable trading infrastructure, positioning for next-generation commodity flows. Not just trading - building systems.
+                Driving sustainability integration and organic developments, building scalable trading infrastructure, positioning for next-generation commodity flows. Not just trading - building systems.
               </p>
             </div>
           </div>
