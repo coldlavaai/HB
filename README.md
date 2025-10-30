@@ -190,3 +190,4 @@ This is a personal CV website. Feel free to use the code structure and design as
 **Built with** Next.js, TypeScript, Tailwind CSS, Framer Motion, Three.js
 
 *Interactive CV © 2025 Harry Bennett*
+
