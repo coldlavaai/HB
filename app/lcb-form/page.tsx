@@ -43,17 +43,14 @@ export default function LCBFormPage() {
     e.preventDefault();
     setLoading(true);
 
-    const formattedData = `🔵 LCB FORM SUBMISSION from Harry Bennett\n\nTimestamp: ${new Date().toISOString()}\n\n${JSON.stringify(formData, null, 2)}`;
-
     try {
-      // Send to Telegram
-      const response = await fetch(`https://api.telegram.org/bot7505486021:AAHf_QWUWOa1dZYuPvK6QJx2mZl0KO7xYL4/sendMessage`, {
+      const response = await fetch('/api/lcb-submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          chat_id: '538272205',
-          text: formattedData,
-          parse_mode: 'HTML'
+          ...formData,
+          timestamp: new Date().toISOString(),
+          submittedBy: 'Harry Bennett'
         })
       });
 

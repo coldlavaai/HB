@@ -1,37 +1,34 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { writeFile, readFile, mkdir } from 'fs/promises';
-import { join } from 'path';
-import { existsSync } from 'fs';
 
-// Store submissions in memory (persists during function lifetime)
 const submissions: any[] = [];
 
 export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
-
-    // Store in memory
     submissions.push(data);
 
-    // Also send to n8n webhook for persistent storage
+    const formattedData = `🔵 LCB FORM from Harry Bennett\n\n${new Date().toISOString()}\n\n${JSON.stringify(data, null, 2)}`;
+
+    // Send to Telegram
     try {
-      await fetch('https://otdm22.app.n8n.cloud/webhook/lcb-form-submission', {
+      await fetch(`https://api.telegram.org/bot7505486021:AAHf_QWUWOa1dZYuPvK6QJx2mZl0KO7xYL4/sendMessage`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: JSON.stringify({
+          chat_id: '538272205',
+          text: formattedData
+        })
       });
-    } catch (webhookError) {
-      console.error('Webhook error (non-fatal):', webhookError);
+    } catch (telegramError) {
+      console.error('Telegram error (non-fatal):', telegramError);
     }
-
-    console.log('LCB FORM SUBMISSION:', JSON.stringify(data, null, 2));
 
     return NextResponse.json({
       success: true,
       message: 'Form submitted successfully'
     });
   } catch (error) {
-    console.error('Error saving form submission:', error);
+    console.error('Error:', error);
     return NextResponse.json(
       { success: false, message: 'Error submitting form' },
       { status: 500 }
