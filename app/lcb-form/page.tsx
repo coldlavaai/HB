@@ -39,62 +39,49 @@ export default function LCBFormPage() {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-
-    try {
-      // Send to Web3Forms
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          access_key: '8f0e1d9c-5a3b-4e7f-9d2a-6c8b4f1e3a7d',
-          subject: 'LCB Dashboard Requirements from Harry Bennett',
-          from_name: 'Harry Bennett',
-          email: 'oliver@otdm.net',
-          message: JSON.stringify(formData, null, 2),
-          ...formData,
-          timestamp: new Date().toISOString(),
-          submittedBy: 'Harry Bennett'
-        }),
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        setSubmitted(true);
-      } else {
-        alert('There was an error submitting the form. Please try again.');
-      }
-    } catch (error) {
-      alert('There was an error submitting the form. Please try again.');
-    } finally {
-      setLoading(false);
-    }
+    setSubmitted(true);
   };
 
   if (submitted) {
+    const copyToClipboard = () => {
+      const text = JSON.stringify(formData, null, 2);
+      navigator.clipboard.writeText(text);
+      alert('Copied! Please paste into WhatsApp/email to Oliver');
+    };
+
     return (
       <div className="min-h-screen bg-gradient-to-br from-[#0a0a33] via-[#1a1a4a] to-[#2a2a5a] flex items-center justify-center p-4">
-        <div className="max-w-2xl w-full bg-white rounded-2xl shadow-2xl p-8 text-center border-4 border-[#02bbd4]/20">
-          <div className="text-6xl mb-4">✓</div>
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] bg-clip-text text-transparent mb-4" style={{fontFamily: 'Montserrat, sans-serif'}}>
+        <div className="max-w-4xl w-full bg-white rounded-2xl shadow-2xl p-8 border-4 border-[#02bbd4]/20">
+          <div className="text-6xl mb-4 text-center">✓</div>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] bg-clip-text text-transparent mb-4 text-center" style={{fontFamily: 'Montserrat, sans-serif'}}>
             Thank You, Harry!
           </h1>
-          <p className="text-gray-600 text-lg mb-6">
-            Your responses have been sent to Oliver automatically.
+          <p className="text-gray-600 text-lg mb-6 text-center">
+            Click the button below to copy your responses, then send them to Oliver via WhatsApp or email.
           </p>
-          <div className="inline-block mb-4">
-            <img
-              src="https://cdn.shopify.com/s/files/1/0951/6141/8067/files/Full_logo_White_text_no_logo_glow.png?v=1761221158"
-              alt="Cold Lava"
-              className="h-12 w-auto"
-            />
+
+          <div className="bg-gray-50 p-6 rounded-lg mb-6 max-h-96 overflow-y-auto">
+            <pre className="text-xs whitespace-pre-wrap font-mono">{JSON.stringify(formData, null, 2)}</pre>
           </div>
-          <p className="text-sm text-gray-500">
-            Oliver will review your requirements and get back to you shortly.
-          </p>
+
+          <button
+            onClick={copyToClipboard}
+            className="w-full py-4 px-6 bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] text-white font-bold rounded-lg hover:from-[#029eb8] hover:to-[#3a7bc8] transition-all shadow-lg text-lg mb-4"
+          >
+            📋 Copy to Clipboard & Send to Oliver
+          </button>
+
+          <div className="text-center">
+            <div className="inline-block mb-2">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0951/6141/8067/files/Full_logo_White_text_no_logo_glow.png?v=1761221158"
+                alt="Cold Lava"
+                className="h-10 w-auto"
+              />
+            </div>
+          </div>
         </div>
       </div>
     );
