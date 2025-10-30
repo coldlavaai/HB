@@ -44,19 +44,25 @@ export default function LCBFormPage() {
     setLoading(true);
 
     try {
-      // Send to FormSubmit.co which emails Oliver
-      const response = await fetch('https://formsubmit.co/ajax/oliver@otdm.net', {
+      // Send to Web3Forms
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          access_key: '8f0e1d9c-5a3b-4e7f-9d2a-6c8b4f1e3a7d',
           subject: 'LCB Dashboard Requirements from Harry Bennett',
+          from_name: 'Harry Bennett',
+          email: 'oliver@otdm.net',
+          message: JSON.stringify(formData, null, 2),
           ...formData,
           timestamp: new Date().toISOString(),
           submittedBy: 'Harry Bennett'
         }),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (result.success) {
         setSubmitted(true);
       } else {
         alert('There was an error submitting the form. Please try again.');
