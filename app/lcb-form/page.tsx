@@ -67,29 +67,53 @@ export default function LCBFormPage() {
   };
 
   if (submitted) {
+    const downloadJSON = () => {
+      const dataStr = JSON.stringify(formData, null, 2);
+      const dataBlob = new Blob([dataStr], { type: 'application/json' });
+      const url = URL.createObjectURL(dataBlob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `lcb-requirements-${new Date().toISOString().split('T')[0]}.json`;
+      link.click();
+      URL.revokeObjectURL(url);
+    };
+
     return (
       <div className="min-h-screen bg-gradient-to-br from-[#0a0a33] via-[#1a1a4a] to-[#2a2a5a] flex items-center justify-center p-4">
-        <div className="max-w-2xl w-full bg-white rounded-2xl shadow-2xl p-8 text-center border-4 border-[#02bbd4]/20">
-          <div className="text-6xl mb-4">✓</div>
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] bg-clip-text text-transparent mb-4" style={{fontFamily: 'Montserrat, sans-serif'}}>
+        <div className="max-w-4xl w-full bg-white rounded-2xl shadow-2xl p-8 border-4 border-[#02bbd4]/20">
+          <div className="text-6xl mb-4 text-center">✓</div>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] bg-clip-text text-transparent mb-4 text-center" style={{fontFamily: 'Montserrat, sans-serif'}}>
             Thank You, Harry!
           </h1>
-          <p className="text-gray-600 text-lg mb-6">
-            Your responses have been submitted successfully.
+          <p className="text-gray-600 text-lg mb-6 text-center">
+            Your responses have been recorded. Please download and send to Oliver.
           </p>
-          <div className="inline-block mb-4">
-            <img
-              src="https://cdn.shopify.com/s/files/1/0951/6141/8067/files/Full_logo_White_text_no_logo_glow.png?v=1761221158"
-              alt="Cold Lava"
-              className="h-12 w-auto"
-            />
+
+          <div className="bg-gray-50 p-6 rounded-lg mb-6 max-h-96 overflow-y-auto text-left">
+            <pre className="text-sm whitespace-pre-wrap font-mono">{JSON.stringify(formData, null, 2)}</pre>
           </div>
-          <p className="text-sm text-gray-500">
-            Powered by Cold Lava
-          </p>
-          <p className="text-sm text-gray-500 mt-2">
-            Oliver will review your requirements and get back to you shortly.
-          </p>
+
+          <div className="flex gap-4 justify-center">
+            <button
+              onClick={downloadJSON}
+              className="px-8 py-3 bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] text-white font-bold rounded-lg hover:from-[#029eb8] hover:to-[#3a7bc8] transition-all shadow-lg"
+            >
+              Download JSON
+            </button>
+          </div>
+
+          <div className="text-center mt-8">
+            <div className="inline-block mb-2">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0951/6141/8067/files/Full_logo_White_text_no_logo_glow.png?v=1761221158"
+                alt="Cold Lava"
+                className="h-10 w-auto"
+              />
+            </div>
+            <p className="text-sm text-gray-500">
+              Send the downloaded file to Oliver
+            </p>
+          </div>
         </div>
       </div>
     );
