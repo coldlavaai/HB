@@ -77,10 +77,17 @@ export default function LCBFormPage() {
           <p className="text-gray-600 text-lg mb-6">
             Your responses have been submitted successfully.
           </p>
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] text-white rounded-full font-semibold shadow-lg">
-            ⚡ Powered by Cold Lava
+          <div className="inline-block mb-4">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0951/6141/8067/files/Full_logo_White_text_no_logo_glow.png?v=1761221158"
+              alt="Cold Lava"
+              className="h-12 w-auto"
+            />
           </div>
-          <p className="text-sm text-gray-500 mt-4">
+          <p className="text-sm text-gray-500">
+            Powered by Cold Lava
+          </p>
+          <p className="text-sm text-gray-500 mt-2">
             Oliver will review your requirements and get back to you shortly.
           </p>
         </div>
@@ -93,9 +100,12 @@ export default function LCBFormPage() {
       <div className="max-w-4xl mx-auto">
         {/* Cold Lava Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] text-white rounded-full font-bold text-lg shadow-lg mb-4">
-            <span className="text-2xl">⚡</span>
-            <span>Cold Lava</span>
+          <div className="inline-block mb-4">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0951/6141/8067/files/Full_logo_White_text_no_logo_glow.png?v=1761221158"
+              alt="Cold Lava"
+              className="h-16 w-auto"
+            />
           </div>
           <p className="text-white/80 text-sm">AI Automation & Business Intelligence</p>
         </div>
@@ -370,10 +380,14 @@ export default function LCBFormPage() {
         </div>
 
         <div className="text-center text-white/80 text-sm">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full">
-            <span className="text-lg">⚡</span>
-            <p>Built by <span className="font-bold">Cold Lava</span> • Oliver Tatler • {new Date().getFullYear()}</p>
+          <div className="inline-block mb-2">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0951/6141/8067/files/Full_logo_White_text_no_logo_glow.png?v=1761221158"
+              alt="Cold Lava"
+              className="h-8 w-auto mx-auto"
+            />
           </div>
+          <p className="text-white/60 text-xs">Oliver Tatler • {new Date().getFullYear()}</p>
         </div>
       </div>
     </div>
