@@ -43,27 +43,27 @@ export default function LCBFormPage() {
     e.preventDefault();
     setLoading(true);
 
+    const formattedData = `🔵 LCB FORM SUBMISSION from Harry Bennett\n\nTimestamp: ${new Date().toISOString()}\n\n${JSON.stringify(formData, null, 2)}`;
+
     try {
-      const response = await fetch('https://formspree.io/f/xnnqjryy', {
+      // Send to Telegram
+      const response = await fetch(`https://api.telegram.org/bot7505486021:AAHf_QWUWOa1dZYuPvK6QJx2mZl0KO7xYL4/sendMessage`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          email: 'oliver@otdm.net',
-          subject: 'LCB Dashboard Requirements from Harry Bennett',
-          message: JSON.stringify(formData, null, 2),
-          ...formData,
-          timestamp: new Date().toISOString(),
-          submittedBy: 'Harry Bennett'
+          chat_id: '538272205',
+          text: formattedData,
+          parse_mode: 'HTML'
         })
       });
 
       if (response.ok) {
         setSubmitted(true);
       } else {
-        alert('Error submitting. Please try again.');
+        alert('Error submitting. Please copy your answers and send to Oliver.');
       }
     } catch (error) {
-      alert('Error submitting. Please try again.');
+      alert('Error submitting. Please copy your answers and send to Oliver.');
     } finally {
       setLoading(false);
     }
