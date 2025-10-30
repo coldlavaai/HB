@@ -39,9 +39,33 @@ export default function LCBFormPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      const response = await fetch('https://otdm22.app.n8n.cloud/webhook/lcb-form-submission', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          timestamp: new Date().toISOString(),
+          submittedBy: 'Harry Bennett'
+        })
+      });
+
+      if (response.ok || response.status === 200) {
+        setSubmitted(true);
+      } else {
+        // Show the data even if webhook fails
+        setSubmitted(true);
+      }
+    } catch (error) {
+      // Show the data even if webhook fails
+      setSubmitted(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
