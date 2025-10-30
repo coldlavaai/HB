@@ -44,25 +44,26 @@ export default function LCBFormPage() {
     setLoading(true);
 
     try {
-      const response = await fetch('https://otdm22.app.n8n.cloud/webhook/lcb-form-submission', {
+      const response = await fetch('https://formspree.io/f/xnnqjryy', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          email: 'oliver@otdm.net',
+          subject: 'LCB Dashboard Requirements from Harry Bennett',
+          message: JSON.stringify(formData, null, 2),
           ...formData,
           timestamp: new Date().toISOString(),
           submittedBy: 'Harry Bennett'
         })
       });
 
-      if (response.ok || response.status === 200) {
+      if (response.ok) {
         setSubmitted(true);
       } else {
-        // Show the data even if webhook fails
-        setSubmitted(true);
+        alert('Error submitting. Please try again.');
       }
     } catch (error) {
-      // Show the data even if webhook fails
-      setSubmitted(true);
+      alert('Error submitting. Please try again.');
     } finally {
       setLoading(false);
     }
