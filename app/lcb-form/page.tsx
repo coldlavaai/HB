@@ -6,38 +6,31 @@ export default function LCBFormPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
-    // Current Process
-    timeSpentWeekly: '',
-    biggestPainPoint: '',
+    // Charts & Data
+    criticalCharts: '',
+    prioritySpreads: [] as string[],
+    timeRanges: [] as string[],
+    priorityMarkets: [] as string[],
+    chartsToSkip: '',
 
-    // Clients & Usage
-    numberOfClients: '',
-    clientTypes: [] as string[],
-    howClientsUse: '',
-    clientFeedback: '',
+    // Interactivity
+    interactiveFeatures: [] as string[],
 
-    // Desired Features
-    interactiveDashboard: '',
-    mobileAccess: '',
-    clientPortal: '',
-    aiInsights: '',
-    customReports: '',
-    realTimeUpdates: '',
-
-    // Priorities
-    topPriority: '',
-    mustHaveFeatures: '',
-    niceToHaveFeatures: '',
+    // Client Access
+    clientAccess: '',
+    differentClientViews: '',
 
     // Technical
     updateFrequency: '',
     exportFormats: [] as string[],
+    mobileImportant: '',
 
     // Additional
-    additionalThoughts: '',
+    additionalDataSources: '',
+    additionalNotes: '',
   });
 
-  const handleCheckboxChange = (field: 'clientTypes' | 'exportFormats', value: string) => {
+  const handleCheckboxChange = (field: 'prioritySpreads' | 'timeRanges' | 'priorityMarkets' | 'interactiveFeatures' | 'exportFormats', value: string) => {
     setFormData(prev => ({
       ...prev,
       [field]: prev[field].includes(value)
@@ -75,16 +68,16 @@ export default function LCBFormPage() {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-red-900/20 to-orange-900/30 flex items-center justify-center p-4">
-        <div className="max-w-2xl w-full bg-white rounded-2xl shadow-2xl p-8 text-center border-4 border-orange-500/20">
-          <div className="text-6xl mb-4">🌋</div>
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">
+      <div className="min-h-screen bg-gradient-to-br from-[#0a0a33] via-[#1a1a4a] to-[#2a2a5a] flex items-center justify-center p-4">
+        <div className="max-w-2xl w-full bg-white rounded-2xl shadow-2xl p-8 text-center border-4 border-[#02bbd4]/20">
+          <div className="text-6xl mb-4">✓</div>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] bg-clip-text text-transparent mb-4" style={{fontFamily: 'Montserrat, sans-serif'}}>
             Thank You, Harry!
           </h1>
           <p className="text-gray-600 text-lg mb-6">
             Your responses have been submitted successfully.
           </p>
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-semibold">
+          <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] text-white rounded-full font-semibold shadow-lg">
             ⚡ Powered by Cold Lava
           </div>
           <p className="text-sm text-gray-500 mt-4">
@@ -96,106 +89,63 @@ export default function LCBFormPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-red-900/20 to-orange-900/30 py-12 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#0a0a33] via-[#1a1a4a] to-[#2a2a5a] py-12 px-4" style={{fontFamily: 'Montserrat, sans-serif'}}>
       <div className="max-w-4xl mx-auto">
         {/* Cold Lava Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-full font-bold text-lg shadow-lg mb-4">
-            <span className="text-2xl">🌋</span>
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] text-white rounded-full font-bold text-lg shadow-lg mb-4">
+            <span className="text-2xl">⚡</span>
             <span>Cold Lava</span>
           </div>
           <p className="text-white/80 text-sm">AI Automation & Business Intelligence</p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-2xl p-8 mb-8 border-4 border-orange-500/20">
+        <div className="bg-white rounded-2xl shadow-2xl p-8 mb-8 border-4 border-[#02bbd4]/20">
           <div className="mb-8">
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-2">
+            <h1 className="text-4xl font-bold text-[#0a0a33] mb-2">
               Liverpool Cotton Brokers
             </h1>
-            <h2 className="text-2xl font-semibold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">
-              Cotton Analysis Dashboard - Requirements
+            <h2 className="text-2xl font-semibold bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] bg-clip-text text-transparent mb-4">
+              Cotton Analysis Dashboard - Technical Configuration
             </h2>
             <p className="text-gray-600">
-              Hi Harry! We're building a modern web dashboard for your cotton analysis. Please answer these questions so we can create exactly what you need. This should take about 5-10 minutes.
+              Hi Harry! Please answer these technical questions about your dashboard needs. This helps us build exactly what you need without back-and-forth revisions. Takes ~5 minutes.
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-8">
-            {/* Current Process */}
-            <section className="border-t-2 border-orange-500/20 pt-6">
-              <h3 className="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">📊 Current Process</h3>
+            {/* Charts & Data Priority */}
+            <section className="border-t-2 border-[#02bbd4]/20 pt-6">
+              <h3 className="text-xl font-bold bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] bg-clip-text text-transparent mb-4">📊 Charts & Data Priority</h3>
 
               <div className="mb-6">
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  1. How much time do you spend weekly creating the PDF reports?
-                </label>
-                <select
-                  required
-                  value={formData.timeSpentWeekly}
-                  onChange={(e) => setFormData({...formData, timeSpentWeekly: e.target.value})}
-                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all"
-                >
-                  <option value="">Select...</option>
-                  <option value="<1 hour">Less than 1 hour</option>
-                  <option value="1-2 hours">1-2 hours</option>
-                  <option value="2-4 hours">2-4 hours</option>
-                  <option value="4-8 hours">4-8 hours</option>
-                  <option value=">8 hours">More than 8 hours</option>
-                </select>
-              </div>
-
-              <div className="mb-6">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  2. What's the biggest pain point with your current PDF process?
+                  1. From your current 23 Excel charts, which 5 are most critical? (List chart names or descriptions)
                 </label>
                 <textarea
                   required
-                  value={formData.biggestPainPoint}
-                  onChange={(e) => setFormData({...formData, biggestPainPoint: e.target.value})}
+                  value={formData.criticalCharts}
+                  onChange={(e) => setFormData({...formData, criticalCharts: e.target.value})}
                   rows={3}
-                  placeholder="e.g., Takes too long, hard to update, clients want more detail..."
-                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all"
+                  placeholder="e.g., CZCE-ICE spread, A-Index trends, Pakistan arrivals, Certified stock, PSF-PTA spread"
+                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#02bbd4] focus:border-[#02bbd4] transition-all"
                 />
               </div>
-            </section>
-
-            {/* Clients & Usage */}
-            <section className="border-t-2 border-orange-500/20 pt-6">
-              <h3 className="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">👥 Your Clients</h3>
 
               <div className="mb-6">
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  3. How many clients receive your weekly analysis?
-                </label>
-                <select
-                  required
-                  value={formData.numberOfClients}
-                  onChange={(e) => setFormData({...formData, numberOfClients: e.target.value})}
-                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all"
-                >
-                  <option value="">Select...</option>
-                  <option value="1-5">1-5 clients</option>
-                  <option value="6-10">6-10 clients</option>
-                  <option value="11-20">11-20 clients</option>
-                  <option value="21-50">21-50 clients</option>
-                  <option value=">50">More than 50 clients</option>
-                </select>
-              </div>
-
-              <div className="mb-6">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  4. What types of clients do you serve? (Select all that apply)
+                  2. Which spreads do you analyze most often? (Select all that apply)
                 </label>
                 <div className="space-y-2">
-                  {['Textile manufacturers', 'Cotton traders', 'Spinning mills', 'Retailers/brands', 'Financial institutions', 'Other'].map(type => (
-                    <label key={type} className="flex items-center">
+                  {['CZCE - ICE', 'MCX - ICE', 'PSF - PTA', 'CZCE Cotton - PSF', 'AWP - ICE', 'CC-Index basis CZCE', 'China - International'].map(spread => (
+                    <label key={spread} className="flex items-center">
                       <input
                         type="checkbox"
-                        checked={formData.clientTypes.includes(type)}
-                        onChange={() => handleCheckboxChange('clientTypes', type)}
-                        className="w-4 h-4 text-orange-500 border-gray-300 rounded focus:ring-orange-500"
+                        checked={formData.prioritySpreads.includes(spread)}
+                        onChange={() => handleCheckboxChange('prioritySpreads', spread)}
+                        className="w-4 h-4 text-[#02bbd4] border-gray-300 rounded focus:ring-[#02bbd4]"
                       />
-                      <span className="ml-2 text-gray-700">{type}</span>
+                      <span className="ml-2 text-gray-700">{spread}</span>
                     </label>
                   ))}
                 </div>
@@ -203,181 +153,217 @@ export default function LCBFormPage() {
 
               <div className="mb-6">
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  5. How do clients typically use your reports?
+                  3. What time ranges matter most for analysis? (Select all that apply)
                 </label>
-                <textarea
-                  required
-                  value={formData.howClientsUse}
-                  onChange={(e) => setFormData({...formData, howClientsUse: e.target.value})}
-                  rows={3}
-                  placeholder="e.g., Making purchase decisions, risk management, sharing with their teams..."
-                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all"
-                />
-              </div>
-
-              <div className="mb-6">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  6. What feedback have clients given about the current reports?
-                </label>
-                <textarea
-                  value={formData.clientFeedback}
-                  onChange={(e) => setFormData({...formData, clientFeedback: e.target.value})}
-                  rows={3}
-                  placeholder="Any requests, complaints, or compliments..."
-                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all"
-                />
-              </div>
-            </section>
-
-            {/* Desired Features */}
-            <section className="border-t-2 border-orange-500/20 pt-6">
-              <h3 className="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">✨ Feature Priorities</h3>
-              <p className="text-sm text-gray-600 mb-4">Rate each feature: Essential, Nice to have, or Not needed</p>
-
-              {[
-                { key: 'interactiveDashboard', label: '7. Interactive charts that clients can zoom/filter themselves' },
-                { key: 'mobileAccess', label: '8. Mobile-friendly access for viewing on phones/tablets' },
-                { key: 'clientPortal', label: '9. Password-protected client portal with login access' },
-                { key: 'aiInsights', label: '10. AI-generated insights and commentary based on data' },
-                { key: 'customReports', label: '11. Ability to create custom reports per client' },
-                { key: 'realTimeUpdates', label: '12. Real-time data updates (vs weekly)' },
-              ].map(({ key, label }) => (
-                <div key={key} className="mb-6">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">{label}</label>
-                  <div className="flex gap-4">
-                    {['Essential', 'Nice to have', 'Not needed'].map(option => (
-                      <label key={option} className="flex items-center">
-                        <input
-                          type="radio"
-                          required
-                          name={key}
-                          value={option}
-                          checked={formData[key as keyof typeof formData] === option}
-                          onChange={(e) => setFormData({...formData, [key]: e.target.value})}
-                          className="w-4 h-4 text-orange-500 border-gray-300 focus:ring-orange-500"
-                        />
-                        <span className="ml-2 text-gray-700">{option}</span>
-                      </label>
-                    ))}
-                  </div>
+                <div className="space-y-2">
+                  {['Last 7 days', 'Last 30 days', 'Last 90 days', 'Last 6 months', 'Year-to-date', 'Custom date ranges'].map(range => (
+                    <label key={range} className="flex items-center">
+                      <input
+                        type="checkbox"
+                        checked={formData.timeRanges.includes(range)}
+                        onChange={() => handleCheckboxChange('timeRanges', range)}
+                        className="w-4 h-4 text-[#02bbd4] border-gray-300 rounded focus:ring-[#02bbd4]"
+                      />
+                      <span className="ml-2 text-gray-700">{range}</span>
+                    </label>
+                  ))}
                 </div>
-              ))}
-            </section>
-
-            {/* Top Priorities */}
-            <section className="border-t-2 border-orange-500/20 pt-6">
-              <h3 className="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">🎯 Overall Priorities</h3>
+              </div>
 
               <div className="mb-6">
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  13. What's your #1 priority for this new system?
+                  4. Which markets are priority for your clients? (Select all that apply)
+                </label>
+                <div className="space-y-2">
+                  {['China (CZCE)', 'India (MCX)', 'US (ICE)', 'Pakistan', 'Australia', 'Brazil (CEPEA)', 'All markets'].map(market => (
+                    <label key={market} className="flex items-center">
+                      <input
+                        type="checkbox"
+                        checked={formData.priorityMarkets.includes(market)}
+                        onChange={() => handleCheckboxChange('priorityMarkets', market)}
+                        className="w-4 h-4 text-[#02bbd4] border-gray-300 rounded focus:ring-[#02bbd4]"
+                      />
+                      <span className="ml-2 text-gray-700">{market}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mb-6">
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  5. Are there any charts/data from your current 23 sheets we can skip or simplify?
                 </label>
                 <textarea
-                  required
-                  value={formData.topPriority}
-                  onChange={(e) => setFormData({...formData, topPriority: e.target.value})}
+                  value={formData.chartsToSkip}
+                  onChange={(e) => setFormData({...formData, chartsToSkip: e.target.value})}
                   rows={2}
-                  placeholder="The single most important thing this needs to do..."
-                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all"
-                />
-              </div>
-
-              <div className="mb-6">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  14. What features are absolute "must-haves" for launch?
-                </label>
-                <textarea
-                  required
-                  value={formData.mustHaveFeatures}
-                  onChange={(e) => setFormData({...formData, mustHaveFeatures: e.target.value})}
-                  rows={3}
-                  placeholder="List the features you can't launch without..."
-                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all"
-                />
-              </div>
-
-              <div className="mb-6">
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  15. What features would be great for Phase 2 (can wait)?
-                </label>
-                <textarea
-                  value={formData.niceToHaveFeatures}
-                  onChange={(e) => setFormData({...formData, niceToHaveFeatures: e.target.value})}
-                  rows={3}
-                  placeholder="Nice-to-have features for future updates..."
-                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all"
+                  placeholder="e.g., Some generic charts, Chart1-6 can be removed, etc."
+                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#02bbd4] focus:border-[#02bbd4] transition-all"
                 />
               </div>
             </section>
 
-            {/* Technical Details */}
-            <section className="border-t-2 border-orange-500/20 pt-6">
-              <h3 className="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">⚙️ Technical Details</h3>
+            {/* Interactivity & Features */}
+            <section className="border-t-2 border-[#02bbd4]/20 pt-6">
+              <h3 className="text-xl font-bold bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] bg-clip-text text-transparent mb-4">🎛️ Interactive Features</h3>
 
               <div className="mb-6">
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  16. How often do you update your data?
+                  6. What interactive features do you want? (Select all that apply)
+                </label>
+                <div className="space-y-2">
+                  {['Zoom into charts', 'Compare different time periods side-by-side', 'Overlay multiple spreads on one chart', 'Price alerts/notifications', 'Export custom date ranges', 'Filter by specific markets'].map(feature => (
+                    <label key={feature} className="flex items-center">
+                      <input
+                        type="checkbox"
+                        checked={formData.interactiveFeatures.includes(feature)}
+                        onChange={() => handleCheckboxChange('interactiveFeatures', feature)}
+                        className="w-4 h-4 text-[#02bbd4] border-gray-300 rounded focus:ring-[#02bbd4]"
+                      />
+                      <span className="ml-2 text-gray-700">{feature}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            </section>
+
+            {/* Client Access */}
+            <section className="border-t-2 border-[#02bbd4]/20 pt-6">
+              <h3 className="text-xl font-bold bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] bg-clip-text text-transparent mb-4">👥 Client Access</h3>
+
+              <div className="mb-6">
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  7. How should clients access the dashboard?
                 </label>
                 <select
                   required
-                  value={formData.updateFrequency}
-                  onChange={(e) => setFormData({...formData, updateFrequency: e.target.value})}
-                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all"
+                  value={formData.clientAccess}
+                  onChange={(e) => setFormData({...formData, clientAccess: e.target.value})}
+                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#02bbd4] focus:border-[#02bbd4] transition-all"
                 >
                   <option value="">Select...</option>
-                  <option value="Real-time">Real-time/Continuous</option>
-                  <option value="Daily">Daily</option>
-                  <option value="Weekly">Weekly</option>
-                  <option value="Bi-weekly">Bi-weekly</option>
-                  <option value="Monthly">Monthly</option>
+                  <option value="login-portal">Password-protected login portal (clients access directly)</option>
+                  <option value="email-reports">Email reports only (you send PDFs)</option>
+                  <option value="both">Both - portal + email reports</option>
+                  <option value="public-link">Public link (no login required)</option>
                 </select>
               </div>
 
               <div className="mb-6">
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  17. What export formats do clients need? (Select all that apply)
+                  8. Do different clients need different chart sets/views?
+                </label>
+                <select
+                  required
+                  value={formData.differentClientViews}
+                  onChange={(e) => setFormData({...formData, differentClientViews: e.target.value})}
+                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#02bbd4] focus:border-[#02bbd4] transition-all"
+                >
+                  <option value="">Select...</option>
+                  <option value="yes-custom">Yes - different clients see different charts based on their needs</option>
+                  <option value="no-same">No - everyone sees the same dashboard</option>
+                  <option value="maybe-future">Not yet, but maybe in the future</option>
+                </select>
+              </div>
+            </section>
+
+            {/* Technical Details */}
+            <section className="border-t-2 border-[#02bbd4]/20 pt-6">
+              <h3 className="text-xl font-bold bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] bg-clip-text text-transparent mb-4">⚙️ Technical Details</h3>
+
+              <div className="mb-6">
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  9. How often do you update your data?
+                </label>
+                <select
+                  required
+                  value={formData.updateFrequency}
+                  onChange={(e) => setFormData({...formData, updateFrequency: e.target.value})}
+                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#02bbd4] focus:border-[#02bbd4] transition-all"
+                >
+                  <option value="">Select...</option>
+                  <option value="realtime">Real-time/Continuous (as market data updates)</option>
+                  <option value="daily">Daily</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="manual">Manual uploads when needed</option>
+                </select>
+              </div>
+
+              <div className="mb-6">
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  10. What export formats do clients need? (Select all that apply)
                 </label>
                 <div className="space-y-2">
-                  {['PDF', 'Excel/CSV', 'PowerPoint', 'Email summary', 'None - web only'].map(format => (
+                  {['PDF report', 'Excel/CSV data', 'PowerPoint slides', 'Individual chart images (PNG/JPG)', 'None - web dashboard only'].map(format => (
                     <label key={format} className="flex items-center">
                       <input
                         type="checkbox"
                         checked={formData.exportFormats.includes(format)}
                         onChange={() => handleCheckboxChange('exportFormats', format)}
-                        className="w-4 h-4 text-orange-500 border-gray-300 rounded focus:ring-orange-500"
+                        className="w-4 h-4 text-[#02bbd4] border-gray-300 rounded focus:ring-[#02bbd4]"
                       />
                       <span className="ml-2 text-gray-700">{format}</span>
                     </label>
                   ))}
                 </div>
               </div>
-            </section>
-
-            {/* Additional Thoughts */}
-            <section className="border-t-2 border-orange-500/20 pt-6">
-              <h3 className="text-xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">💭 Final Thoughts</h3>
 
               <div className="mb-6">
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  18. Anything else we should know?
+                  11. Is mobile/tablet access important for you or your clients?
+                </label>
+                <select
+                  required
+                  value={formData.mobileImportant}
+                  onChange={(e) => setFormData({...formData, mobileImportant: e.target.value})}
+                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#02bbd4] focus:border-[#02bbd4] transition-all"
+                >
+                  <option value="">Select...</option>
+                  <option value="critical">Yes - critical, we check data on mobile often</option>
+                  <option value="nice">Nice to have, but not essential</option>
+                  <option value="no">No - desktop only is fine</option>
+                </select>
+              </div>
+            </section>
+
+            {/* Additional Context */}
+            <section className="border-t-2 border-[#02bbd4]/20 pt-6">
+              <h3 className="text-xl font-bold bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] bg-clip-text text-transparent mb-4">💡 Additional Context</h3>
+
+              <div className="mb-6">
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  12. Are there any additional data sources to integrate beyond your current Excel?
                 </label>
                 <textarea
-                  value={formData.additionalThoughts}
-                  onChange={(e) => setFormData({...formData, additionalThoughts: e.target.value})}
-                  rows={4}
-                  placeholder="Any other requirements, concerns, ideas, or context that would be helpful..."
-                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all"
+                  value={formData.additionalDataSources}
+                  onChange={(e) => setFormData({...formData, additionalDataSources: e.target.value})}
+                  rows={2}
+                  placeholder="e.g., Direct API feeds, weather data, freight costs, etc."
+                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#02bbd4] focus:border-[#02bbd4] transition-all"
+                />
+              </div>
+
+              <div className="mb-6">
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  13. Any other technical requirements, concerns, or ideas?
+                </label>
+                <textarea
+                  value={formData.additionalNotes}
+                  onChange={(e) => setFormData({...formData, additionalNotes: e.target.value})}
+                  rows={3}
+                  placeholder="Anything else that would help us build the perfect dashboard for you..."
+                  className="w-full p-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#02bbd4] focus:border-[#02bbd4] transition-all"
                 />
               </div>
             </section>
 
-            <div className="border-t-2 border-orange-500/20 pt-6">
+            <div className="border-t-2 border-[#02bbd4]/20 pt-6">
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold py-4 px-6 rounded-xl hover:from-orange-600 hover:to-red-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                className="w-full bg-gradient-to-r from-[#02bbd4] to-[#4a90e2] text-white font-bold py-4 px-6 rounded-xl hover:from-[#029eb8] hover:to-[#3a7bc8] transition-all disabled:opacity-50 disabled:cursor-not-allowed text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
-                {loading ? '⚡ Submitting...' : '🚀 Submit Requirements'}
+                {loading ? '⚡ Submitting...' : '🚀 Submit Configuration'}
               </button>
             </div>
           </form>
@@ -385,7 +371,7 @@ export default function LCBFormPage() {
 
         <div className="text-center text-white/80 text-sm">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full">
-            <span className="text-lg">🌋</span>
+            <span className="text-lg">⚡</span>
             <p>Built by <span className="font-bold">Cold Lava</span> • Oliver Tatler • {new Date().getFullYear()}</p>
           </div>
         </div>
